@@ -1,0 +1,26 @@
+@keyframes pulse-dot {
+  0% { box-shadow: 0 0 0 0 rgba(var(--accent-2-rgb), 0.55); }
+  70% { box-shadow: 0 0 0 7px rgba(var(--accent-2-rgb), 0); }
+  100% { box-shadow: 0 0 0 0 rgba(var(--accent-2-rgb), 0); }
+}
+
+@keyframes fade-slide-in {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: none; }
+}
+
+.page-enter {
+  animation: fade-slide-in 0.35s ease both;
+}
+
+/* Visitors who ask their system for less motion get (almost) no animation */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

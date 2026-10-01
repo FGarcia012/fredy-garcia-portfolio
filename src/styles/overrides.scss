@@ -1,0 +1,132 @@
+// Bootstrap components restyled with our palette.
+// Bootstrap components read CSS variables (--bs-btn-bg, ...), so we only change those values.
+
+$on-accent: #04130c; // dark text used on top of the green accent
+
+.btn {
+  --bs-btn-border-radius: 10px;
+  font-family: var(--font-mono);
+  font-weight: 700;
+}
+
+.btn-primary {
+  --bs-btn-color: #{$on-accent};
+  --bs-btn-bg: var(--accent);
+  --bs-btn-border-color: var(--accent);
+  --bs-btn-hover-color: #{$on-accent};
+  --bs-btn-hover-bg: #5af0b6;
+  --bs-btn-hover-border-color: #5af0b6;
+  --bs-btn-active-color: #{$on-accent};
+  --bs-btn-active-bg: #1fc886;
+  --bs-btn-active-border-color: #1fc886;
+  --bs-btn-focus-shadow-rgb: var(--accent-rgb);
+}
+
+.btn-outline-primary {
+  --bs-btn-color: var(--accent);
+  --bs-btn-border-color: var(--accent);
+  --bs-btn-hover-color: #{$on-accent};
+  --bs-btn-hover-bg: var(--accent);
+  --bs-btn-hover-border-color: var(--accent);
+  --bs-btn-active-color: #{$on-accent};
+  --bs-btn-active-bg: var(--accent);
+  --bs-btn-active-border-color: var(--accent);
+  --bs-btn-focus-shadow-rgb: var(--accent-rgb);
+}
+
+.btn-outline-secondary {
+  --bs-btn-color: var(--muted);
+  --bs-btn-border-color: var(--border);
+  --bs-btn-hover-color: var(--text);
+  --bs-btn-hover-bg: var(--surface-2);
+  --bs-btn-hover-border-color: var(--muted);
+  --bs-btn-active-color: var(--text);
+  --bs-btn-active-bg: var(--surface-2);
+}
+
+.badge {
+  font-family: var(--font-mono);
+  font-weight: 700;
+
+  // Bootstrap uses white text on badges; on our light green/cyan we need dark text
+  &.bg-primary,
+  &.bg-info {
+    color: $on-accent;
+  }
+}
+
+.card {
+  --bs-card-bg: var(--surface);
+  --bs-card-border-color: var(--border);
+  --bs-card-border-radius: var(--radius);
+  --bs-card-inner-border-radius: calc(var(--radius) - 1px);
+}
+
+.progress {
+  --bs-progress-bg: var(--surface-2);
+  --bs-progress-bar-bg: var(--accent);
+  --bs-progress-bar-color: #{$on-accent};
+  --bs-progress-height: 1rem;
+  font-family: var(--font-mono);
+}
+
+.offcanvas {
+  --bs-offcanvas-bg: var(--surface);
+  --bs-offcanvas-border-color: var(--border);
+  --bs-offcanvas-width: min(86vw, 320px);
+}
+
+.modal {
+  --bs-modal-bg: var(--surface);
+  --bs-modal-border-color: var(--border);
+  --bs-modal-border-radius: var(--radius);
+}
+
+.toast {
+  --bs-toast-bg: var(--surface-2);
+  --bs-toast-border-color: var(--border);
+  font-family: var(--font-mono);
+}
+
+.tooltip {
+  --bs-tooltip-bg: var(--surface-2);
+  --bs-tooltip-color: var(--text);
+  font-family: var(--font-mono);
+}
+
+.breadcrumb {
+  --bs-breadcrumb-divider: '/';
+  --bs-breadcrumb-divider-color: var(--muted);
+  --bs-breadcrumb-item-active-color: var(--text);
+  --bs-breadcrumb-font-size: 0.75rem;
+  --bs-breadcrumb-margin-bottom: 0;
+}
+
+// Mobile top bar
+.mobile-nav {
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  padding-block: 0.5rem;
+
+  .navbar-brand {
+    font-family: var(--font-mono);
+    font-weight: 700;
+    color: var(--text);
+
+    &:hover {
+      color: var(--accent);
+    }
+  }
+}
+
+.brand-prompt {
+  color: var(--accent);
+}
+
+.mobile-menu-btn {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+}
