@@ -460,3 +460,217 @@ h1, h2, h3, h4, h5, h6,
   border-color: rgba(var(--accent-rgb), 0.35);
   background: linear-gradient(135deg, var(--surface), rgba(var(--accent-rgb), 0.07));
 }
+
+/* ========== 6. PHASE 3 PAGES ========== */
+
+/* Icon in a rounded square (values, pillars, goals) */
+.icon-box {
+  display: grid;
+  place-items: center;
+  flex: 0 0 auto;
+  width: 44px;
+  height: 44px;
+  margin-bottom: 1rem;
+  border: 1px solid rgba(var(--accent-rgb), 0.35);
+  border-radius: 10px;
+  background: rgba(var(--accent-rgb), 0.08);
+  color: var(--accent);
+  font-size: 1.2rem;
+}
+.goal-card .icon-box {
+  margin-bottom: 0;
+}
+
+/* About */
+.profile-photo {
+  width: clamp(120px, 22vw, 180px);
+  aspect-ratio: 1;
+  border: 2px solid var(--accent);
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 0 0 4px rgba(var(--accent-rgb), 0.12), 0 0 32px rgba(var(--accent-rgb), 0.3);
+}
+.profile-photo-placeholder {
+  display: grid;
+  place-items: center;
+  background: var(--surface-2);
+  color: var(--accent);
+  font-family: var(--font-mono);
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+.about-text {
+  max-width: 68ch;
+  font-size: clamp(1rem, 0.95rem + 0.3vw, 1.1rem);
+}
+.about-text:last-child {
+  margin-bottom: 0;
+}
+.soft-badge {
+  padding: 0.5rem 0.85rem;
+  font-size: 0.85rem;
+}
+.currently-list {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+}
+.currently-list dt {
+  color: var(--accent);
+  font-weight: 700;
+}
+.currently-list dd {
+  margin: 0 0 0.85rem;
+  color: var(--text);
+}
+
+/* Scrum cycle */
+.scrum-cycle {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 1rem 0 0.5rem;
+  padding: 0;
+}
+.scrum-cycle li {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.scrum-step {
+  padding: 0.45rem 0.85rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--surface-2);
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+}
+.scrum-arrow {
+  color: var(--accent);
+  font-family: var(--font-mono);
+}
+.scrum-loop {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+/* Value / pillar cards */
+.value-card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+@media (hover: hover) {
+  .value-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 0 0 1px rgba(var(--accent-rgb), 0.35), 0 8px 28px rgba(var(--accent-rgb), 0.12);
+  }
+}
+.value-tag {
+  display: block;
+  width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 2px solid transparent;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--accent);
+}
+.value-card:hover .value-tag {
+  border-right-color: var(--accent);
+  animation: type-label 0.9s steps(11) forwards;
+}
+@keyframes type-label {
+  to { width: 11ch; }
+}
+
+/* Personal Mark: editor document with line numbers */
+.code-doc {
+  margin: 0;
+  padding: 1rem 0;
+  list-style: none;
+  counter-reset: line;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+  font-family: var(--font-mono);
+}
+.code-doc li {
+  display: flex;
+  gap: 1rem;
+  padding: 0.2rem 1rem 0.2rem 0;
+  counter-increment: line;
+}
+.code-doc li::before {
+  content: counter(line);
+  flex: 0 0 3rem;
+  text-align: right;
+  color: var(--muted);
+  user-select: none;
+}
+.doc-heading {
+  color: var(--info);
+  font-weight: 700;
+}
+.doc-quote-mark {
+  margin-right: 0.5rem;
+  color: var(--muted);
+}
+.doc-tagline {
+  color: var(--accent);
+  font-size: clamp(1.1rem, 0.9rem + 1.5vw, 1.75rem);
+  font-weight: 700;
+}
+.doc-text {
+  min-width: 0;
+  font-family: var(--font-sans);
+  overflow-wrap: anywhere;
+}
+.quote-block {
+  padding: 1rem 1.25rem;
+  border-left: 3px solid var(--accent);
+  background: var(--surface);
+  border-radius: 0 var(--radius) var(--radius) 0;
+}
+.quote-block blockquote {
+  font-size: clamp(1.05rem, 0.95rem + 0.5vw, 1.3rem);
+}
+.quote-block figcaption {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+/* MCI goals */
+.goal-deadline {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--accent-2);
+}
+.check-list {
+  margin-bottom: 1.25rem;
+  padding: 0;
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+}
+.check-list li {
+  display: flex;
+  gap: 0.6rem;
+  margin-bottom: 0.4rem;
+}
+.check-list li > span:first-child {
+  flex: 0 0 auto;
+  color: var(--accent);
+}
+.terminal-bar {
+  margin-bottom: 0.5rem;
+  font-family: var(--font-mono);
+  color: var(--accent);
+  letter-spacing: 0.05em;
+  overflow-wrap: anywhere;
+}
+.goal-progress {
+  --bs-progress-height: 0.4rem;
+}

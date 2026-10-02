@@ -25,11 +25,13 @@ export default function ProjectCard({ project }) {
           )}
         </div>
         <Card.Text className="text-secondary">{summary}</Card.Text>
-        <div className="d-flex flex-wrap gap-2 mb-3">
-          {stack.map((tech) => (
-            <Badge key={tech} bg={null} className="tech-badge">{tech}</Badge>
-          ))}
-        </div>
+        {stack.length > 0 && (
+          <div className="d-flex flex-wrap gap-2 mb-3">
+            {stack.map((tech) => (
+              <Badge key={tech} bg={null} className="tech-badge">{tech}</Badge>
+            ))}
+          </div>
+        )}
         <div className="project-actions d-flex flex-wrap gap-2 mt-auto">
           <Button as={Link} to={`/projects/${slug}`} variant="primary">Details</Button>
           {github && (
