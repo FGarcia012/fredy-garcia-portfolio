@@ -11,6 +11,8 @@ export const certifications = [
     issuedOn: '2023-03-07',
     file: '/certificates/ccna-introduction-to-networks.pdf',
     verifyUrl: 'https://www.credly.com/badges/573dc394-d07a-4551-a4b4-30afbad31ae4/public_url',
-    image: null, // [EDIT] badge image, added in Phase 4
+    image: null, // [EDIT] optional badge image, e.g. '/images/ccna-itn.png'
   },
+  // [EDIT] Example of a certificate that opens a public link (Credly) in a new tab:
+  // { id: 'ccna-2', type: 'link', title: '...', issuer: 'Cisco Networking Academy', issuedOn: 'YYYY-MM-DD', url: 'https://www.credly.com/...', image: null },
 ]

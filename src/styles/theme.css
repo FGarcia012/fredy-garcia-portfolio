@@ -674,3 +674,269 @@ h1, h2, h3, h4, h5, h6,
 .goal-progress {
   --bs-progress-height: 0.4rem;
 }
+
+/* ========== 7. PHASE 4 PAGES ========== */
+
+.min-w-0 {
+  min-width: 0;
+}
+
+/* Projects: filter chips */
+.filter-chip {
+  min-height: 44px;
+  min-width: 44px;
+}
+
+/* Project detail: README document */
+.readme-section + .readme-section {
+  margin-top: 1.75rem;
+}
+.readme-heading {
+  margin-bottom: 0.75rem;
+  font-size: clamp(1.1rem, 1rem + 0.5vw, 1.35rem);
+  color: var(--info);
+}
+.readme-heading .hash {
+  color: var(--muted);
+}
+.readme-list {
+  margin: 0;
+  padding-left: 1.25rem;
+}
+.readme-list li + li {
+  margin-top: 0.35rem;
+}
+.readme-list li::marker {
+  color: var(--accent);
+}
+.readme-carousel img {
+  max-height: 420px;
+  object-fit: contain;
+  background: var(--surface-2);
+  border-radius: var(--radius);
+}
+
+/* Skills grid */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(104px, 1fr));
+  gap: 0.75rem;
+  margin: 0 0 1.5rem;
+  padding: 0;
+  list-style: none;
+}
+.skill-tile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  min-height: 44px;
+  padding: 0.9rem 0.5rem;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+/* Hidden until the grid scrolls into view, then each tile appears a little after the previous one.
+   "backwards" fill mode: after the animation ends, the hover lift still works. */
+.skills-grid:not(.is-visible) .skill-tile {
+  opacity: 0;
+}
+.skills-grid.is-visible .skill-tile {
+  animation: fade-slide-in 0.5s ease backwards;
+  animation-delay: calc(var(--i) * 60ms);
+}
+.skill-tile:hover,
+.skill-tile:focus-visible {
+  transform: translateY(-4px);
+  border-color: var(--skill-color);
+  box-shadow: 0 0 18px color-mix(in srgb, var(--skill-color) 35%, transparent);
+}
+.skill-icon {
+  font-size: 2rem;
+  color: var(--skill-color);
+}
+.skill-letters {
+  display: grid;
+  place-items: center;
+  width: 2rem;
+  height: 2rem;
+  font-family: var(--font-mono);
+  font-size: 1rem;
+  font-weight: 700;
+  border: 2px solid var(--skill-color);
+  border-radius: 6px;
+}
+.skill-name {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+}
+.skills-subtitle {
+  margin-bottom: 0.75rem;
+  font-size: 1rem;
+  color: var(--muted);
+}
+.method-badge {
+  padding: 0.5em 0.9em;
+  font-size: 0.85rem;
+}
+
+/* Certifications */
+.cert-card {
+  transition: box-shadow 0.2s ease;
+}
+.cert-card:hover,
+.cert-card:focus-within {
+  box-shadow: 0 0 0 1px rgba(var(--accent-rgb), 0.35), 0 8px 28px rgba(var(--accent-rgb), 0.12);
+}
+.cert-badge {
+  flex: 0 0 auto;
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+}
+.cert-open {
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--accent);
+  font: inherit;
+  text-align: left;
+}
+.cert-card a,
+.cert-open {
+  text-decoration: none;
+}
+.cert-card .stretched-link:hover,
+.cert-open:hover {
+  text-decoration: underline;
+}
+.verified-badge {
+  background: rgba(var(--accent-rgb), 0.12);
+  border: 1px solid rgba(var(--accent-rgb), 0.4);
+  color: var(--accent);
+}
+/* The Verify link sits above the clickable card layer */
+.cert-verify {
+  position: relative;
+  z-index: 2;
+}
+.file-frame {
+  width: 100%;
+  height: 72vh;
+  border: 0;
+  border-radius: 8px;
+  background: var(--surface-2);
+}
+
+/* CV document */
+.cv-header {
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid var(--border);
+}
+.cv-name {
+  margin-bottom: 0.15rem;
+  font-size: clamp(1.6rem, 1.2rem + 2vw, 2.4rem);
+  font-weight: 700;
+}
+.cv-role {
+  margin-bottom: 0.75rem;
+  font-family: var(--font-mono);
+  color: var(--info);
+}
+.cv-section {
+  margin-top: 2rem;
+}
+.timeline {
+  margin: 0;
+  padding: 0 0 0 1.25rem;
+  list-style: none;
+  border-left: 2px solid var(--border);
+}
+.timeline > li {
+  position: relative;
+  padding-bottom: 1.5rem;
+}
+.timeline > li:last-child {
+  padding-bottom: 0;
+}
+.timeline > li::before {
+  content: '';
+  position: absolute;
+  top: 0.4rem;
+  left: calc(-1.25rem - 6px);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 0 3px var(--surface), 0 0 10px rgba(var(--accent-rgb), 0.5);
+}
+.timeline-title {
+  margin-bottom: 0.15rem;
+  font-size: 1.05rem;
+}
+.timeline-place {
+  margin-bottom: 0.1rem;
+}
+.timeline-period {
+  margin-bottom: 0.6rem;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--accent-2);
+}
+.timeline-bullets {
+  margin: 0;
+  padding-left: 1.1rem;
+}
+.timeline-bullets li + li {
+  margin-top: 0.3rem;
+}
+.language-list li + li {
+  margin-top: 1rem;
+}
+.connect-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-height: 44px;
+  padding: 0 1rem;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: box-shadow 0.2s ease, border-color 0.2s ease;
+}
+.connect-link:hover {
+  border-color: var(--accent);
+  box-shadow: 0 0 16px rgba(var(--accent-rgb), 0.25);
+}
+
+/* Contact */
+.contact-intro {
+  min-height: 1.5em;
+  font-size: clamp(1.05rem, 0.95rem + 0.5vw, 1.25rem);
+}
+.contact-card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+@media (hover: hover) {
+  .contact-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 0 1px rgba(var(--accent-rgb), 0.35), 0 8px 28px rgba(var(--accent-rgb), 0.12);
+  }
+}
+.contact-card a {
+  text-decoration: none;
+}
+.copy-btn {
+  position: relative;
+  z-index: 2; /* above the clickable card layer */
+  min-height: 44px;
+}
+.toast-area {
+  bottom: var(--statusbar-h);
+  z-index: 1080;
+}
