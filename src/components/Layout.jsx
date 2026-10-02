@@ -1,6 +1,8 @@
-import { Suspense, useEffect, useRef } from 'react'
+import { Suspense, useCallback, useEffect, useRef, useState } from 'react'
 import { Outlet, useLocation } from 'react-router-dom'
 import useLocalStorage from '../hooks/useLocalStorage'
+import { hasSeen, prefersReducedMotion } from '../utils/session'
+import BootScreen from './BootScreen'
 import MobileNav from './MobileNav'
 import Sidebar from './Sidebar'
 import StatusBar from './StatusBar'
@@ -13,6 +15,11 @@ export default function Layout() {
   const previousPath = useRef(pathname)
   const [collapsed, setCollapsed] = useLocalStorage('sidebar-collapsed', false)
 
+  // The boot screen shows once per session (never with reduced motion).
+  // BootScreen marks itself as seen when it finishes or is skipped.
+  const [booting, setBooting] = useState(() => !prefersReducedMotion() && !hasSeen('boot'))
+  const finishBoot = useCallback(() => setBooting(false), [])
+
   // After navigating: scroll to top and move focus to the content (good for keyboard and screen readers).
   // We skip the very first load so the "Skip to content" link stays the first Tab stop.
   useEffect(() => {
@@ -21,6 +28,10 @@ export default function Layout() {
     mainRef.current?.scrollTo({ top: 0 })
     mainRef.current?.focus({ preventScroll: true })
   }, [pathname])
+
+  // While booting, only the boot screen exists. The page mounts afterwards,
+  // so its typing animation starts exactly when the boot screen disappears.
+  if (booting) return <BootScreen onDone={finishBoot} />
 
   return (
     <div className="ide">

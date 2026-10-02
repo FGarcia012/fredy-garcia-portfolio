@@ -1,0 +1,101 @@
+/* Typewriter */
+.cursor {
+  color: var(--accent);
+  text-shadow: 0 0 10px rgba(var(--accent-rgb), 0.6);
+  animation: blink 1s steps(1) infinite;
+}
+.typed-line {
+  min-height: 1.5em;
+  overflow-wrap: anywhere;
+}
+
+/* Hero */
+.hero {
+  padding-block: clamp(0.5rem, 3vw, 2rem);
+}
+.hero-terminal {
+  font-size: clamp(0.95rem, 0.8rem + 0.6vw, 1.15rem);
+}
+.hero-name {
+  margin-top: 0.25rem;
+  font-size: clamp(2rem, 1rem + 5vw, 3.75rem);
+  font-weight: 700;
+  line-height: 1.1;
+  text-shadow: 0 0 28px rgba(var(--accent-rgb), 0.25);
+}
+.hero-role {
+  min-height: 2rem; /* reserved so the page does not jump when the role appears */
+  margin-top: 0.75rem;
+  font-size: clamp(1rem, 0.9rem + 0.8vw, 1.4rem);
+  color: var(--info);
+}
+.hero-pitch {
+  max-width: 60ch;
+  margin: 1rem 0 1.5rem;
+  font-size: clamp(1rem, 0.95rem + 0.3vw, 1.15rem);
+}
+.availability-badge {
+  padding: 0.55em 0.9em;
+  background: rgba(var(--accent-2-rgb), 0.1);
+  border: 1px solid rgba(var(--accent-2-rgb), 0.4);
+  color: var(--accent-2);
+}
+.availability-badge .status-dot {
+  display: inline-block;
+  margin-right: 0.35rem;
+}
+
+/* Stat cards */
+.stat-card {
+  height: 100%;
+  padding: 1.1rem 1rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  text-align: center;
+}
+.stat-value {
+  font-family: var(--font-mono);
+  font-size: clamp(1.4rem, 1rem + 2vw, 2rem);
+  font-weight: 700;
+  color: var(--accent);
+  text-shadow: 0 0 18px rgba(var(--accent-rgb), 0.3);
+}
+.stat-label {
+  margin-top: 0.15rem;
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+.cta-card {
+  border-color: rgba(var(--accent-rgb), 0.35);
+  box-shadow: 0 0 40px rgba(var(--accent-rgb), 0.08);
+}
+
+/* Boot screen */
+.boot-screen {
+  position: fixed;
+  inset: 0;
+  z-index: 3000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  background: var(--bg);
+}
+.boot-log {
+  width: min(100%, 560px);
+  font-size: 0.95rem;
+}
+.boot-log p {
+  margin: 0 0 0.4rem;
+}
+.boot-ok {
+  color: var(--accent);
+  font-weight: 700;
+}
+.boot-log .boot-hint {
+  margin-top: 1.5rem;
+  font-size: 0.75rem;
+  color: var(--muted);
+}

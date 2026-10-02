@@ -12,6 +12,7 @@ import '@fontsource/inter/600.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './styles/theme.css'
 import './styles/animations.css'
+import './styles/components.css'
 import './styles/overrides.scss'
 
 import App from './App.jsx'
