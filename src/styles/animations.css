@@ -48,3 +48,9 @@
   from { transform: translateX(0); }
   to { transform: translateX(-50%); }
 }
+
+/* The dot grid moves exactly one dot-step, so the loop has no jump */
+@keyframes grid-drift {
+  to { transform: translate3d(24px, 24px, 0); }
+}
+

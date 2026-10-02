@@ -23,7 +23,7 @@ const hasItems = (list) => Array.isArray(list) && list.length > 0
 export default function ProjectDetail() {
   const { slug } = useParams()
   const project = projects.find((item) => item.slug === slug)
-  usePageTitle(project ? project.title : 'Project not found')
+  usePageTitle(project ? project.title : 'Project not found', project?.summary ?? 'This project does not exist.')
 
   if (!project) {
     return (

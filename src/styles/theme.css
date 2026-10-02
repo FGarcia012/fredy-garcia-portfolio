@@ -58,9 +58,6 @@ body,
 
 body {
   margin: 0;
-  /* Very faint dot grid */
-  background-image: radial-gradient(circle, rgba(127, 142, 163, 0.14) 1px, transparent 1px);
-  background-size: 24px 24px;
 }
 
 h1, h2, h3, h4, h5, h6,

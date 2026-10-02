@@ -2,6 +2,7 @@ import { Suspense, useCallback, useEffect, useRef, useState } from 'react'
 import { Outlet, useLocation } from 'react-router-dom'
 import useLocalStorage from '../hooks/useLocalStorage'
 import { hasSeen, prefersReducedMotion } from '../utils/session'
+import BackgroundFX from './BackgroundFX'
 import BootScreen from './BootScreen'
 import MobileNav from './MobileNav'
 import Sidebar from './Sidebar'
@@ -15,6 +16,7 @@ export default function Layout() {
   const mainRef = useRef(null)
   const previousPath = useRef(pathname)
   const [collapsed, setCollapsed] = useLocalStorage('sidebar-collapsed', false)
+  const [scanlines, setScanlines] = useLocalStorage('scanlines', true)
 
   // The boot screen shows once per session (never with reduced motion).
   // BootScreen marks itself as seen when it finishes or is skipped.
@@ -36,6 +38,7 @@ export default function Layout() {
 
   return (
     <div className="ide">
+      <BackgroundFX scanlines={scanlines} />
       <a className="skip-link" href="#main-content">
         Skip to content
       </a>
@@ -54,7 +57,7 @@ export default function Layout() {
           </main>
         </div>
       </div>
-      <StatusBar pathname={pathname} />
+      <StatusBar pathname={pathname} scanlines={scanlines} onToggleScanlines={() => setScanlines((value) => !value)} />
     </div>
   )
 }

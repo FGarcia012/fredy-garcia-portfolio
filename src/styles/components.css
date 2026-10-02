@@ -99,3 +99,63 @@
   font-size: 0.75rem;
   color: var(--muted);
 }
+
+/* ========== PHASE 6: BACKGROUND EFFECTS ========== */
+
+/* The app sits above the fixed background layer */
+.ide {
+  position: relative;
+  z-index: 1;
+}
+.bg-fx {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+/* 24px bigger on each side, so it can drift by one dot-step without showing an edge */
+.bg-grid {
+  position: absolute;
+  inset: -24px;
+  background-image: radial-gradient(circle, rgba(127, 142, 163, 0.14) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+.bg-glow {
+  display: none;
+}
+.has-effects .bg-grid {
+  animation: grid-drift 40s linear infinite; /* transform only: cheap for the browser */
+}
+.has-effects .bg-glow {
+  display: block;
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(520px circle at var(--mx, 50%) var(--my, 30%), rgba(var(--accent-rgb), 0.09), transparent 70%);
+}
+.bg-scanlines {
+  position: fixed;
+  inset: 0;
+  z-index: 5000;
+  pointer-events: none;
+  opacity: 0.22;
+  background: repeating-linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0, rgba(0, 0, 0, 0.3) 1px, transparent 1px, transparent 3px);
+}
+.crt-toggle {
+  align-items: center;
+  padding: 0 0.4rem;
+  border: 0;
+  background: none;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+.crt-toggle:hover,
+.crt-toggle[aria-pressed='true'] {
+  color: var(--accent);
+}
+
+/* Screenshots reserve their space before loading (no layout jump) */
+.readme-carousel img {
+  aspect-ratio: 16 / 9;
+}
+

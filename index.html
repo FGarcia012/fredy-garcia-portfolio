@@ -6,13 +6,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#0a0e14" />
     <meta name="color-scheme" content="dark" />
+    <title>Fredy García | Full-Stack Developer</title>
     <meta
       name="description"
       content="Portfolio of Fredy García: Computer Science and Systems Engineering student and junior full-stack developer from Guatemala."
     />
-    <title>Fredy García | Full-Stack Developer</title>
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="Fredy García" />
+
+    <!-- Open Graph and Twitter cards (shown when the link is shared). Tags with __SITE_URL__ are filled at build time. -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Fredy García" />
+    <meta property="og:title" content="Fredy García | Full-Stack Developer" />
+    <meta property="og:description" content="Computer Science and Systems Engineering student and junior full-stack developer from Guatemala. I build secure, efficient and scalable software." />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:url" content="__SITE_URL__/" />
+    <meta property="og:image" content="__SITE_URL__/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Terminal-style card that reads: Fredy García, Full-Stack Developer, Guatemala" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Fredy García | Full-Stack Developer" />
+    <meta name="twitter:description" content="Computer Science and Systems Engineering student and junior full-stack developer from Guatemala." />
+    <meta name="twitter:image" content="__SITE_URL__/og-image.png" />
+
+    <!-- Structured data: helps search engines understand who this site is about -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Fredy García",
+        "alternateName": "Fredy Alexander García Sicajau",
+        "jobTitle": "Junior Full-Stack Developer",
+        "url": "__SITE_URL__/",
+        "address": { "@type": "PostalAddress", "addressCountry": "GT" },
+        "knowsAbout": ["JavaScript", "React", "Node.js", "Java", "Python", "C++", "MySQL", "MongoDB", "Scrum"],
+        "sameAs": [
+          "https://github.com/FGarcia012",
+          "https://www.linkedin.com/in/fredy-alexander-garc%C3%ADa-sicajau-2169253a0",
+          "https://www.instagram.com/mr.g4rcia_0"
+        ]
+      }
+    </script>
   </head>
   <body>
+    <noscript>This portfolio needs JavaScript to run. Please enable it in your browser.</noscript>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>

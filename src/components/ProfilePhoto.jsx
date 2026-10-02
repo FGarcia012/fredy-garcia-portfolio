@@ -15,7 +15,7 @@ export default function ProfilePhoto() {
       alt="Portrait of Fredy García"
       width="180"
       height="180"
-      loading="lazy"
+      decoding="async"
       onError={() => setFailed(true)}
     />
   )
