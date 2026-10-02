@@ -1,7 +1,10 @@
 // Bootstrap components restyled with our palette.
 // Bootstrap components read CSS variables (--bs-btn-bg, ...), so we only change those values.
 
-$on-accent: #04130c; // dark text used on top of the green accent
+$on-accent: #04130c; // dark text used on top of the accent color
+// Lighter / darker versions of the current accent (it can change at runtime)
+$accent-hover: #{'color-mix(in srgb, var(--accent) 75%, white)'};
+$accent-active: #{'color-mix(in srgb, var(--accent) 85%, black)'};
 
 .btn {
   --bs-btn-border-radius: 10px;
@@ -14,11 +17,11 @@ $on-accent: #04130c; // dark text used on top of the green accent
   --bs-btn-bg: var(--accent);
   --bs-btn-border-color: var(--accent);
   --bs-btn-hover-color: #{$on-accent};
-  --bs-btn-hover-bg: #5af0b6;
-  --bs-btn-hover-border-color: #5af0b6;
+  --bs-btn-hover-bg: #{$accent-hover};
+  --bs-btn-hover-border-color: #{$accent-hover};
   --bs-btn-active-color: #{$on-accent};
-  --bs-btn-active-bg: #1fc886;
-  --bs-btn-active-border-color: #1fc886;
+  --bs-btn-active-bg: #{$accent-active};
+  --bs-btn-active-border-color: #{$accent-active};
   --bs-btn-focus-shadow-rgb: var(--accent-rgb);
 }
 

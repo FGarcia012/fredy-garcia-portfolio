@@ -5,6 +5,7 @@ import { hasSeen, prefersReducedMotion } from '../utils/session'
 import BootScreen from './BootScreen'
 import MobileNav from './MobileNav'
 import Sidebar from './Sidebar'
+import SiteFooter from './SiteFooter'
 import StatusBar from './StatusBar'
 import TabBar from './TabBar'
 
@@ -48,6 +49,7 @@ export default function Layout() {
               <Suspense fallback={<p className="font-mono text-secondary">Loading...</p>}>
                 <Outlet />
               </Suspense>
+              <SiteFooter />
             </div>
           </main>
         </div>

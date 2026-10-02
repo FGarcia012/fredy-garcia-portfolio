@@ -16,6 +16,9 @@ import './styles/components.css'
 import './styles/overrides.scss'
 
 import App from './App.jsx'
+import { initAccent } from './utils/accent'
+
+initAccent()
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>

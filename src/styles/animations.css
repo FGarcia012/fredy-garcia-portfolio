@@ -42,3 +42,9 @@
     scroll-behavior: auto !important;
   }
 }
+
+/* Technology marquee: moves one full copy of the list, then repeats with no jump */
+@keyframes marquee-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}

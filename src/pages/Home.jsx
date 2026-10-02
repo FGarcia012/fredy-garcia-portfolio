@@ -6,6 +6,8 @@ import Reveal from '../components/Reveal'
 import RotatingText from '../components/RotatingText'
 import SectionTitle from '../components/SectionTitle'
 import StatCard from '../components/StatCard'
+import TechMarquee from '../components/TechMarquee'
+import Terminal from '../components/Terminal'
 import Typewriter from '../components/Typewriter'
 import { certifications } from '../data/certifications'
 import { profile } from '../data/profile'
@@ -80,6 +82,16 @@ export default function Home() {
             </Col>
           ))}
         </Row>
+      </section>
+
+      <section className="mt-5">
+        <SectionTitle>Try the terminal</SectionTitle>
+        <Terminal />
+      </section>
+
+      <section className="mt-5" aria-label="Technologies">
+        <SectionTitle>Technologies I use</SectionTitle>
+        <TechMarquee />
       </section>
 
       <Reveal as="section" className="mt-5">

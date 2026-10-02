@@ -940,3 +940,222 @@ h1, h2, h3, h4, h5, h6,
   bottom: var(--statusbar-h);
   z-index: 1080;
 }
+
+/* ========== 8. PHASE 5: TERMINAL, MARQUEE, ACCENT PICKER, FOOTER ========== */
+
+/* Interactive terminal */
+.terminal {
+  overflow: hidden;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+/* Visible keyboard focus: the whole window glows while the input has focus */
+.terminal:focus-within {
+  border-color: rgba(var(--accent-rgb), 0.6);
+  box-shadow: 0 0 24px rgba(var(--accent-rgb), 0.15);
+}
+.terminal-body {
+  padding: 0.75rem 1rem 0.5rem;
+  background: var(--bg);
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  line-height: 1.55;
+  cursor: text;
+}
+.terminal-output {
+  min-height: 7.5rem;
+  max-height: 20rem;
+  overflow-y: auto;
+  overscroll-behavior: contain; /* scrolling the terminal never scrolls the page behind it */
+}
+.term-line {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+.term-muted {
+  color: var(--muted);
+}
+.term-success {
+  color: var(--accent);
+}
+.term-error {
+  color: #ff7b72;
+}
+.term-help {
+  display: grid;
+  grid-template-columns: minmax(7.5rem, 11rem) 1fr;
+  gap: 0 1rem;
+}
+.term-help-cmd {
+  color: var(--accent);
+}
+.terminal-prompt {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-height: 44px;
+}
+.terminal-prompt .prompt {
+  flex: 0 0 auto;
+}
+.terminal-prompt input {
+  flex: 1 1 auto;
+  min-width: 0;
+  padding: 0.25rem 0;
+  border: 0;
+  outline: 0; /* focus is shown by the glow on the whole terminal (see .terminal:focus-within) */
+  background: transparent;
+  color: var(--text);
+  font: inherit;
+  caret-color: var(--accent);
+}
+@media (max-width: 767.98px) {
+  /* 16px stops iOS from zooming the page when the input gets focus */
+  .terminal-prompt input {
+    font-size: 16px;
+  }
+  .term-help {
+    grid-template-columns: 1fr;
+    margin-bottom: 0.35rem;
+  }
+}
+.terminal-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+}
+.terminal-chips .btn {
+  min-width: 44px;
+  min-height: 44px;
+}
+.terminal-tip {
+  margin: 0.5rem 0 0;
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+/* Technology marquee */
+.marquee {
+  overflow: hidden;
+  /* Soft fade on both edges */
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+}
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee-scroll 50s linear infinite;
+}
+.marquee:hover .marquee-track,
+.marquee:focus-within .marquee-track,
+.marquee.is-paused .marquee-track {
+  animation-play-state: paused;
+}
+.marquee-group {
+  display: flex;
+  flex: 0 0 auto;
+  gap: 2.5rem;
+  margin: 0;
+  padding: 0.5rem 2.5rem 0.5rem 0; /* right padding = gap, so -50% lines up exactly */
+}
+.marquee-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--font-mono);
+  font-size: 0.95rem;
+  white-space: nowrap;
+}
+.marquee-item .skill-icon {
+  font-size: 1.75rem;
+}
+.marquee-toggle {
+  margin-top: 0.75rem;
+  min-height: 44px;
+}
+@media (prefers-reduced-motion: reduce) {
+  /* No movement at all: show the list once, wrapped and centered */
+  .marquee {
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
+  .marquee-track {
+    width: auto;
+    animation: none !important;
+  }
+  .marquee-group {
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-right: 0;
+  }
+  .marquee-group[aria-hidden='true'],
+  .marquee-toggle {
+    display: none;
+  }
+}
+
+/* Accent picker (status bar) */
+.accent-picker {
+  display: inline-flex;
+  align-self: stretch;
+}
+.accent-toggle {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  padding: 0 0.4rem;
+  border: 0;
+  color: var(--muted);
+  font-size: 0.85rem;
+  text-decoration: none;
+}
+/* The bar is only 28px tall: this invisible layer makes the tap area about 44px */
+.accent-toggle::after {
+  content: '';
+  position: absolute;
+  inset: -8px -6px;
+}
+.accent-toggle:hover,
+.accent-toggle:focus-visible,
+.accent-toggle.show {
+  color: var(--accent);
+}
+.accent-menu {
+  --bs-dropdown-bg: var(--surface-2);
+  --bs-dropdown-border-color: var(--border);
+  --bs-dropdown-link-color: var(--text);
+  --bs-dropdown-link-hover-bg: var(--surface);
+  --bs-dropdown-link-hover-color: var(--text);
+  --bs-dropdown-link-active-bg: rgba(var(--accent-rgb), 0.15);
+  --bs-dropdown-link-active-color: var(--accent);
+  --bs-dropdown-min-width: 9rem;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+}
+.accent-menu .dropdown-item {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  min-height: 44px;
+}
+.accent-swatch {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  box-shadow: 0 0 8px currentColor;
+}
+
+/* Footer easter egg */
+.site-footer {
+  margin-top: 3rem;
+  padding: 1.5rem 0 0.5rem;
+  border-top: 1px solid var(--border);
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--muted);
+  text-align: center;
+  overflow-wrap: anywhere;
+}
+.exit-code {
+  color: var(--accent);
+}
