@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react'
 import { prefersReducedMotion } from '../utils/session'
 
-// Counts from 0 up to `target` when `active` becomes true (ease-out curve)
 export default function useCountUp(target, { active = true, duration = 900 } = {}) {
   const [value, setValue] = useState(() => (prefersReducedMotion() ? target : 0))
 

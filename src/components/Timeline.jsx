@@ -1,5 +1,3 @@
-// Vertical timeline used for experience and education.
-// Each item: { title, place, note?, period, bullets? }
 export default function Timeline({ items }) {
   return (
     <ol className="timeline">

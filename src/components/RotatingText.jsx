@@ -1,6 +1,5 @@
 import useRotatingText from '../hooks/useRotatingText'
 
-// A line that types a phrase, deletes it and moves to the next one
 export default function RotatingText({ phrases, active = true, className }) {
   const text = useRotatingText(phrases, { active })
   return (

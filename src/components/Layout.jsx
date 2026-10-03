@@ -10,7 +10,6 @@ import SiteFooter from './SiteFooter'
 import StatusBar from './StatusBar'
 import TabBar from './TabBar'
 
-// The "IDE window": sidebar + tab bar + page content + status bar
 export default function Layout() {
   const { pathname } = useLocation()
   const mainRef = useRef(null)
@@ -18,13 +17,9 @@ export default function Layout() {
   const [collapsed, setCollapsed] = useLocalStorage('sidebar-collapsed', false)
   const [scanlines, setScanlines] = useLocalStorage('scanlines', true)
 
-  // The boot screen shows once per session (never with reduced motion).
-  // BootScreen marks itself as seen when it finishes or is skipped.
   const [booting, setBooting] = useState(() => !prefersReducedMotion() && !hasSeen('boot'))
   const finishBoot = useCallback(() => setBooting(false), [])
 
-  // After navigating: scroll to top and move focus to the content (good for keyboard and screen readers).
-  // We skip the very first load so the "Skip to content" link stays the first Tab stop.
   useEffect(() => {
     if (previousPath.current === pathname) return
     previousPath.current = pathname
@@ -32,8 +27,6 @@ export default function Layout() {
     mainRef.current?.focus({ preventScroll: true })
   }, [pathname])
 
-  // While booting, only the boot screen exists. The page mounts afterwards,
-  // so its typing animation starts exactly when the boot screen disappears.
   if (booting) return <BootScreen onDone={finishBoot} />
 
   return (

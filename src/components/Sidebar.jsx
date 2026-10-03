@@ -2,7 +2,6 @@ import { VscChevronDown, VscChevronLeft, VscChevronRight } from 'react-icons/vsc
 import { navItems } from '../data/navigation'
 import FileLink from './FileLink'
 
-// Desktop file explorer (hidden below 992px, where MobileNav takes over)
 export default function Sidebar({ collapsed, onToggle }) {
   return (
     <aside

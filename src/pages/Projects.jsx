@@ -7,12 +7,10 @@ import { links } from '../data/links'
 import { projectTags, projects } from '../data/projects'
 import usePageTitle from '../hooks/usePageTitle'
 
-// Only tags that at least one project uses become chips, so there are never empty filters
 const availableTags = projectTags.filter((tag) => projects.some((project) => project.tags.includes(tag)))
 
 export default function Projects() {
   usePageTitle('Projects')
-  // The filter lives in the URL (?tag=Web), so the Back button from a detail page keeps it
   const [searchParams, setSearchParams] = useSearchParams()
   const requested = searchParams.get('tag')
   const activeTag = availableTags.includes(requested) ? requested : 'All'

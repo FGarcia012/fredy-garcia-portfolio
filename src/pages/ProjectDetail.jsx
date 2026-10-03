@@ -5,7 +5,6 @@ import Reveal from '../components/Reveal'
 import { projects } from '../data/projects'
 import usePageTitle from '../hooks/usePageTitle'
 
-// One README section: "## Title" in the editor style. Hidden when it has no content.
 function ReadmeSection({ title, show = true, children }) {
   if (!show) return null
   return (

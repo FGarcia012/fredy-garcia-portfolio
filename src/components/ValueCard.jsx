@@ -1,6 +1,5 @@
 import { Card } from 'react-bootstrap'
 
-// On hover, a small label types itself (pure CSS, decorative only)
 export default function ValueCard({ value, number }) {
   const { title, Icon, practice } = value
   return (

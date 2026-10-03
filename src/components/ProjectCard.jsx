@@ -1,7 +1,6 @@
 import { Badge, Button, Card } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 
-// Project card styled like an editor window. Buttons only show when the link exists.
 export default function ProjectCard({ project }) {
   const { slug, file, title, summary, stack, status, github, demo } = project
 

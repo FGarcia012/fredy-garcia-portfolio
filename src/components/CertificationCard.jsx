@@ -5,15 +5,13 @@ import FileModal from './FileModal'
 
 const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
 
-// '2023-03-07' -> 'Mar 2023' (we split the text, so time zones can never change the date)
 function formatDate(isoDate) {
   if (!isoDate) return null
   const [year, month] = isoDate.split('-')
   return `${MONTHS[Number(month) - 1]} ${year}`
 }
 
-// One certificate. type "link": opens `url` in a new tab. type "file": opens `file` in a modal.
-// An optional `verifyUrl` adds a separate "Verify" link (for example Credly).
+
 export default function CertificationCard({ cert }) {
   const { type, title, issuer, issuedOn, url, file, verifyUrl, image } = cert
   const [showFile, setShowFile] = useState(false)

@@ -2,8 +2,6 @@ import { Badge, OverlayTrigger, Tooltip } from 'react-bootstrap'
 import { methodologies, skills } from '../data/skills'
 import useReveal from '../hooks/useReveal'
 
-// Grid of technology icons with official colors. Tiles reveal one after another,
-// lift and glow on hover, and show a Bootstrap Tooltip on hover or keyboard focus.
 export default function SkillsGrid() {
   const [ref, visible] = useReveal()
 

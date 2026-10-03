@@ -1,4 +1,3 @@
-// Footer easter egg: the sentence ends like a program that finished without errors
 export default function SiteFooter() {
   return (
     <footer className="site-footer">

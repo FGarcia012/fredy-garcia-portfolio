@@ -3,9 +3,7 @@ import { prefersReducedMotion } from '../utils/session'
 
 const SEPARATOR = '\u0000'
 
-// Types a phrase, waits, deletes it and moves to the next one, forever.
-// `active` lets us wait until another animation finishes.
-// With prefers-reduced-motion it just shows the first phrase.
+
 export default function useRotatingText(
   phrases,
   { active = true, typeSpeed = 55, deleteSpeed = 30, hold = 1600 } = {},

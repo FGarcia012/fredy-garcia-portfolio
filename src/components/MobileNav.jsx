@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom'
 import { navItems } from '../data/navigation'
 import FileLink from './FileLink'
 
-// Top bar + slide-in menu for screens smaller than 992px
 export default function MobileNav() {
   const [show, setShow] = useState(false)
   const close = () => setShow(false)

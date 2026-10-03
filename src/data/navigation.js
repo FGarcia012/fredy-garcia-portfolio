@@ -11,8 +11,6 @@ import {
 export const DEFAULT_DESCRIPTION =
   'Portfolio of Fredy García: Computer Science and Systems Engineering student and junior full-stack developer from Guatemala.'
 
-// One entry per page. `file` is the name shown in the sidebar (like a file explorer).
-// `description` becomes the page's meta description (what search engines show under the title).
 export const navItems = [
   { path: '/', file: 'home.jsx', editorFile: 'home.jsx', title: 'Home', Icon: FaReact, description: DEFAULT_DESCRIPTION },
   { path: '/about', file: 'about.md', editorFile: 'about.md', title: 'About', Icon: VscMarkdown, description: 'About Fredy García: his studies at USAC, the technologies he works with and how he works with Scrum.' },
@@ -26,7 +24,6 @@ export const navItems = [
 
 const root = ['fredy-garcia', 'portfolio']
 
-// Returns what the tab bar, breadcrumb, status bar and SEO need for the current URL
 export function getPageMeta(pathname) {
   const clean = pathname.replace(/\/+$/, '') || '/'
 
@@ -40,7 +37,6 @@ export function getPageMeta(pathname) {
     }
   }
 
-  // Detail pages such as /projects/ahorra-hoy (each page passes its own description)
   const parent = navItems.find((item) => item.path !== '/' && clean.startsWith(`${item.path}/`))
   if (parent) {
     const file = `${clean.split('/').pop()}.md`

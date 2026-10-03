@@ -11,10 +11,6 @@ import {
   SiSpringboot,
 } from 'react-icons/si'
 
-// Exactly the 14 technologies shown on the site. `color` is the official brand color.
-// `hint` is the short terminal-style line shown in the tooltip.
-// [EDIT] write your own hint per technology, for example: 'java --version → 17+'
-// Jakarta and JavaFX have no icon in react-icons, so they use a monogram (`letters`) instead.
 export const skills = [
   { name: 'Atlas', Icon: SiMongodb, color: '#00ED64', hint: null },
   { name: 'Bootstrap', Icon: SiBootstrap, color: '#8E5BD6', hint: null },

@@ -2,7 +2,6 @@ import { Card } from 'react-bootstrap'
 import useCountUp from '../hooks/useCountUp'
 import useReveal from '../hooks/useReveal'
 
-// Number cards count up when they enter the screen; text values just appear
 export default function StatCard({ value, label, delay = 0 }) {
   const [ref, visible] = useReveal()
   const isNumber = typeof value === 'number'

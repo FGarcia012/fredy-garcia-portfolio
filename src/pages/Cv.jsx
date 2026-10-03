@@ -19,7 +19,6 @@ import usePageTitle from '../hooks/usePageTitle'
 export default function Cv() {
   usePageTitle('CV')
   const [showPdf, setShowPdf] = useState(false)
-  // Header links: GitHub, LinkedIn and Email only
   const headerLinks = contacts.filter((contact) => ['github', 'linkedin', 'email'].includes(contact.id))
 
   return (

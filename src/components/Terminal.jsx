@@ -5,7 +5,6 @@ import { CHIP_COMMANDS } from '../utils/terminalCommands'
 
 const PROMPT = 'fredy@guatemala:~$'
 
-// One printed line: an echoed command, a help row, a link or plain text
 function TerminalLine({ line }) {
   if (line.kind === 'command') {
     return (
@@ -35,19 +34,16 @@ function TerminalLine({ line }) {
   return <div className={`term-line ${line.tone ? `term-${line.tone}` : ''}`}>{line.text}</div>
 }
 
-// Interactive terminal. It is a bonus: every page is also reachable with the normal menu.
 export default function Terminal() {
   const { lines, input, setInput, onKeyDown, run } = useTerminal()
   const inputRef = useRef(null)
   const outputRef = useRef(null)
 
-  // Keep the newest line visible. We scroll the box itself, never the whole page.
   useEffect(() => {
     const output = outputRef.current
     if (output) output.scrollTop = output.scrollHeight
   }, [lines])
 
-  // Clicking the terminal focuses the input, unless the visitor is selecting text
   const focusInput = () => {
     if (!window.getSelection()?.toString()) inputRef.current?.focus()
   }

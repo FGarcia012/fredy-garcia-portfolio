@@ -1,50 +1,48 @@
 import { FaCertificate, FaCode, FaLaptopCode, FaRocket } from 'react-icons/fa'
 
-// MCI = Crucially Important Goals. Every [EDIT] is a value only Fredy can fill in.
-// progress: 0-100. keyResults: done true/false.
 export const goals = [
   {
     id: 'portfolio',
     title: 'Portfolio & Projects',
     Icon: FaLaptopCode,
-    deadline: null, // [EDIT] e.g. 'Dec 2026'
-    progress: 0, // [EDIT]
+    deadline: 'Dec 2030',
+    progress: 30,
     keyResults: [
-      { text: 'Deploy [EDIT: N] projects online', done: false },
-      { text: 'Add real screenshots and links to each featured project', done: false },
+      { text: 'Deploy 10 projects', done: true },
+      { text: 'Add links to each featured project', done: true },
     ],
   },
   {
     id: 'skills',
     title: 'Skill Development',
     Icon: FaCode,
-    deadline: null, // [EDIT]
-    progress: 0, // [EDIT]
+    deadline: 'Dec 2030',
+    progress: 50,
     keyResults: [
       { text: 'Reach an advanced level in full-stack development', done: false },
-      { text: '[EDIT: add a measurable result]', done: false },
+      { text: 'Improve my skills in testing, deployment and software architecture', done: true },
     ],
   },
   {
     id: 'certifications',
     title: 'Certifications',
     Icon: FaCertificate,
-    deadline: null, // [EDIT]
-    progress: 0, // [EDIT]
+    deadline: 'Dec 2028', 
+    progress: 0, 
     keyResults: [
-      { text: 'Earn [EDIT: N] more recognized IT certifications', done: false },
-      { text: '[EDIT: name of the next certification]', done: false },
+      { text: ' Earn recognized certifications that strengthen my skills in software development', done: false },
+      { text: 'Earn my first two certifications: ISC2 Certified in Cybersecurity (CC) and AWS Certified Developer – Associate', done: false },
     ],
   },
   {
     id: 'career',
     title: 'Career',
     Icon: FaRocket,
-    deadline: null, // [EDIT]
-    progress: 0, // [EDIT]
+    deadline: 'Dec 2032', 
+    progress: 5, 
     keyResults: [
-      { text: 'Land my first professional role or internship', done: false },
-      { text: 'Send [EDIT: N] applications per month', done: false },
+      { text: 'Get my first professional job in software development and continue developing my technical and professional skills.', done: false },
+      { text: 'Complete my degree in Computer Science and Systems Engineering and pursue a masters degree to continue advancing my professional education.', done: true },
     ],
   },
 ]

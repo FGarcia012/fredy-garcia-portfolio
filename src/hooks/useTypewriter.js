@@ -3,15 +3,10 @@ import { hasSeen, markSeen, prefersReducedMotion } from '../utils/session'
 
 const SEPARATOR = '\u0000'
 
-// Types several lines one after another, character by character.
-// - `id`: once finished, the animation is skipped for the rest of the session
-// - any key press or click skips it right away
-// - with prefers-reduced-motion the full text shows instantly
 export default function useTypewriter(
   lines,
   { id, speed = 32, jitter = 8, linePause = 380, startDelay = 250 } = {},
 ) {
-  // `lines` is usually a new array on every render, so we compare a string version of it
   const key = lines.join(SEPARATOR)
   const instant = prefersReducedMotion() || hasSeen(id)
   const [typed, setTyped] = useState(() => (instant ? lines : lines.map(() => '')))
@@ -45,7 +40,6 @@ export default function useTypewriter(
       stop()
       finish()
     }
-    // A small random jitter makes the typing feel human
     const nextDelay = () => Math.max(10, speed + (Math.random() * 2 - 1) * jitter)
 
     const tick = () => {
@@ -78,7 +72,6 @@ export default function useTypewriter(
     return stop
   }, [key, id, speed, jitter, linePause, startDelay])
 
-  // The line that is being typed right now (-1 when finished): the cursor goes there
   const activeLine = done
     ? -1
     : Math.max(0, typed.findIndex((text, index) => text.length < (lines[index] ?? '').length))

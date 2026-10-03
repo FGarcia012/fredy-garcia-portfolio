@@ -1,6 +1,5 @@
 import { useState } from 'react'
 
-// Circular photo with a glowing border. If /images/profile.jpg does not exist, it shows "FG".
 export default function ProfilePhoto() {
   const [failed, setFailed] = useState(false)
 

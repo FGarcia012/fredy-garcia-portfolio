@@ -1044,8 +1044,7 @@ h1, h2, h3, h4, h5, h6,
   animation: marquee-scroll 50s linear infinite;
 }
 .marquee:hover .marquee-track,
-.marquee:focus-within .marquee-track,
-.marquee.is-paused .marquee-track {
+.marquee:active .marquee-track {
   animation-play-state: paused;
 }
 .marquee-group {
@@ -1066,10 +1065,6 @@ h1, h2, h3, h4, h5, h6,
 .marquee-item .skill-icon {
   font-size: 1.75rem;
 }
-.marquee-toggle {
-  margin-top: 0.75rem;
-  min-height: 44px;
-}
 @media (prefers-reduced-motion: reduce) {
   /* No movement at all: show the list once, wrapped and centered */
   .marquee {
@@ -1085,8 +1080,7 @@ h1, h2, h3, h4, h5, h6,
     justify-content: center;
     padding-right: 0;
   }
-  .marquee-group[aria-hidden='true'],
-  .marquee-toggle {
+  .marquee-group[aria-hidden='true'] {
     display: none;
   }
 }

@@ -1,4 +1,3 @@
-// Section heading with a terminal prompt in the accent color
 export default function SectionTitle({ children }) {
   return (
     <h2 className="section-title">

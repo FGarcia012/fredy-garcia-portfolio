@@ -13,7 +13,6 @@ export default function Contact() {
   usePageTitle('Contact')
   const [toast, setToast] = useState(null)
 
-  // Copies the email and shows a Toast. If the browser blocks the clipboard, the Toast says so.
   const copyEmail = async () => {
     try {
       await navigator.clipboard.writeText(links.email)

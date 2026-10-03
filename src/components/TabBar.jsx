@@ -1,6 +1,5 @@
 import { getPageMeta } from '../data/navigation'
 
-// Editor tab + breadcrumb path (desktop only)
 export default function TabBar({ pathname }) {
   const { file, Icon, crumbs } = getPageMeta(pathname)
 

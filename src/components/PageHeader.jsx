@@ -1,6 +1,5 @@
 import Typewriter from './Typewriter'
 
-// Page title: a prompt line and the title type themselves the first time (per session)
 export default function PageHeader({ command, title }) {
   return (
     <header className="page-header">

@@ -2,7 +2,6 @@ import { lazy } from 'react'
 import { Route, Routes } from 'react-router-dom'
 import Layout from './components/Layout'
 
-// Each page is loaded only when the visitor opens it (code splitting)
 const Home = lazy(() => import('./pages/Home'))
 const About = lazy(() => import('./pages/About'))
 const Values = lazy(() => import('./pages/Values'))

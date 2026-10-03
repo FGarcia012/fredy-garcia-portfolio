@@ -8,11 +8,9 @@ const LINES = [
   'Starting portfolio v1.0 — Welcome!',
 ]
 
-// Fake "computer starting" screen: about 2 seconds, skippable with any key or click
 export default function BootScreen({ onDone }) {
   const [count, setCount] = useState(0)
 
-  // Show one more line every 380 ms, then finish
   useEffect(() => {
     const finish = () => {
       markSeen('boot')

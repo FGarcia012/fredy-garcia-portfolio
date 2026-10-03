@@ -1,6 +1,5 @@
 import { NavLink } from 'react-router-dom'
 
-// One "file" in the explorer. NavLink adds the "active" class for the current page.
 export default function FileLink({ item, collapsed = false, onNavigate }) {
   const { Icon } = item
   return (

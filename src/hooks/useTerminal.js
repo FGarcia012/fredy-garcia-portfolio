@@ -3,23 +3,20 @@ import { useNavigate } from 'react-router-dom'
 import { completeInput, runCommand, WELCOME_LINES } from '../utils/terminalCommands'
 import useAccent from './useAccent'
 
-const MAX_LINES = 200 // old lines are dropped so the page never gets heavy
+const MAX_LINES = 200 
 let lineId = 0
 const withIds = (lines) => lines.map((line) => ({ ...line, id: (lineId += 1) }))
 
-// State and behavior of the terminal: output lines, typed text, history (↑ ↓),
-// Tab completion and the actions that commands can ask for.
 export default function useTerminal() {
   const navigate = useNavigate()
   const [accent, setAccent] = useAccent()
   const [lines, setLines] = useState(() => withIds(WELCOME_LINES))
   const [input, setInputValue] = useState('')
   const [history, setHistory] = useState([])
-  const [historyIndex, setHistoryIndex] = useState(null) // null = not browsing the history
-  const draft = useRef('') // what was typed before pressing ↑
+  const [historyIndex, setHistoryIndex] = useState(null)
+  const draft = useRef('') 
   const timer = useRef(null)
 
-  // A delayed navigation (for example after `sudo hire-me`) must not fire after leaving the page
   useEffect(() => () => clearTimeout(timer.current), [])
 
   const append = useCallback((newLines) => {
@@ -28,7 +25,6 @@ export default function useTerminal() {
 
   const clear = useCallback(() => setLines([]), [])
 
-  // Typing by hand leaves the history browsing mode
   const setInput = useCallback((value) => {
     setInputValue(value)
     setHistoryIndex(null)
@@ -92,8 +88,6 @@ export default function useTerminal() {
           setHistoryIndex(next)
         }
       } else if (event.key === 'Tab') {
-        // Tab only autocompletes when there is something to complete.
-        // Otherwise it keeps its normal job (moving focus), so keyboard users never get stuck here.
         const { value, options } = completeInput(input)
         if (value === input && options.length === 0) return
         event.preventDefault()

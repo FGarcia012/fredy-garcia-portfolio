@@ -1,8 +1,6 @@
 import { useEffect } from 'react'
 import useTypewriter from '../hooks/useTypewriter'
 
-// Shows lines that type themselves. A line is a string or { text, className, prompt }.
-// Screen readers get the full text at once (`srText`); the animated copy is aria-hidden.
 export default function Typewriter({ lines, id, as: Tag = 'div', className, srText, onDone, ...options }) {
   const items = lines.map((line) => (typeof line === 'string' ? { text: line } : line))
   const { typed, done, activeLine } = useTypewriter(
@@ -19,7 +17,6 @@ export default function Typewriter({ lines, id, as: Tag = 'div', className, srTe
       <span className="visually-hidden">{srText ?? items.map((item) => item.text).join(' ')}</span>
       <span aria-hidden="true">
         {items.map((item, index) => {
-          // A line appears only when it starts typing
           const started = done || index <= activeLine
           if (!started) return null
           return (

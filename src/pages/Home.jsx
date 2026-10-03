@@ -18,11 +18,9 @@ const featuredProjects = projects.filter((project) => project.featured).slice(0,
 
 export default function Home() {
   usePageTitle('')
-  // The rotating role line waits until the hero text finishes typing
   const [heroDone, setHeroDone] = useState(false)
   const handleHeroDone = useCallback(() => setHeroDone(true), [])
 
-  // Stats come from the data files, so they never get out of date
   const stats = [
     {
       value: certifications.length,

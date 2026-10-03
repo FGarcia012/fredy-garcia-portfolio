@@ -4,8 +4,7 @@ import useReveal from '../hooks/useReveal'
 
 const BAR_SIZE = 10
 
-// One MCI goal: key results, a terminal-style bar like [██████░░░░] 60%,
-// and a Bootstrap ProgressBar so assistive technology gets a real progressbar.
+
 export default function GoalCard({ goal, delay = 0 }) {
   const { title, Icon, deadline, progress, keyResults } = goal
   const [ref, visible] = useReveal()

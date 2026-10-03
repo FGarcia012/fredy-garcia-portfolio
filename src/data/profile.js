@@ -4,12 +4,12 @@ export const profile = {
   role: 'Full-Stack Developer',
   location: 'Guatemala',
   availability: 'Open to opportunities',
-  availabilityNote: null, // [EDIT] e.g. 'Open to internships and junior roles'
+  availabilityNote: null, //Colocar a que puesto quiero aplicar en algun momento, por ejemplo: "Open to Front-End Developer opportunities"
   methodology: 'Scrum',
   roles: ['Full-Stack Developer', 'Computer Science & Systems Student', 'Scrum Team Player'],
   pitch: 'I build secure, efficient and scalable web and desktop applications, and I never stop learning.',
-  projectsBuilt: 19, // repositories that count as projects (front and back count as one)
-  cvFile: null, // [EDIT] e.g. '/cv/Fredy-Garcia-CV-EN.pdf'; the "Download CV" button appears when this is set
+  projectsBuilt: 19, 
+  cvFile: null, 
 
   about: [
     "I'm a Computer Science and Systems Engineering student at Universidad de San Carlos de Guatemala (USAC) and a graduate of the Technical Diploma in Computer Science (Perito en Computación). I combine formal training with a self-taught mindset: I keep learning beyond my curriculum, and I specialize in software development.",
@@ -17,13 +17,12 @@ export const profile = {
   ],
   summary:
     "Passionate and detail-oriented Computer Science student with hands-on experience in academic, personal and professional projects. Skilled in web and desktop development with Java, Python, C++, JavaScript, React, Node.js and MySQL/MongoDB. I work with Scrum and I'm motivated to build secure, efficient and scalable software while continuously learning new technologies.",
-  // `level` is only a visual guide for the small bars on the CV page (0-100)
-  languages: [
+
+    languages: [
     { name: 'Spanish', label: 'Native', level: 100 },
     { name: 'English', label: 'Intermediate (B1/B2)', level: 60 },
   ],
   softSkills: ['Leadership', 'Clear communication', 'Adaptability', 'Teamwork', 'Self-taught'],
-  // [EDIT] add more lines when you want (what you are learning or building now)
   currently: [
     { label: 'studying', value: 'B.Sc. in Computer Science and Systems Engineering at USAC (2nd semester)' },
     { label: 'building', value: 'This portfolio, with React and Bootstrap' },

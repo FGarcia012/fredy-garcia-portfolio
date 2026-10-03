@@ -2,8 +2,7 @@ import { Button, Modal } from 'react-bootstrap'
 import { FaDownload, FaExternalLinkAlt } from 'react-icons/fa'
 import useMediaQuery from '../hooks/useMediaQuery'
 
-// Bootstrap Modal that shows a PDF. Phones cannot embed PDFs reliably,
-// so below 768px the modal offers "Open in new tab" instead of the viewer.
+
 export default function FileModal({ show, onHide, title, file }) {
   const canEmbed = useMediaQuery('(min-width: 768px)')
 

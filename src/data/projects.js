@@ -1,11 +1,3 @@
-// Project data. Cards and README pages read from here.
-//
-// Card fields:   slug, file, title, summary, stack, tags, status, github, demo, featured
-// README fields: overview, role, features, architecture, challenges, screenshots, linksNote
-// Any field can be null or empty: the card or the README section is simply hidden.
-// tags: 'Web' | 'Desktop' | 'Team' | 'Individual' | 'Professional' (used by the filter chips)
-// screenshots: [{ src: '/images/projects/name-1.png', alt: 'What the picture shows' }]
-// architecture: { flow: ['Step 1', 'Step 2'], notes: ['Short sentence'] }
 export const projects = [
   {
     slug: 'ahorra-hoy',
@@ -129,5 +121,4 @@ export const projects = [
   },
 ]
 
-// Chips shown on the Projects page. A chip only appears when at least one project uses that tag.
 export const projectTags = ['Web', 'Desktop', 'Team', 'Individual', 'Professional']

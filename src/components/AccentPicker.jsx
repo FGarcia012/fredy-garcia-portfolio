@@ -3,7 +3,6 @@ import { FaPalette } from 'react-icons/fa'
 import useAccent from '../hooks/useAccent'
 import { ACCENTS, ACCENT_NAMES } from '../utils/accent'
 
-// Small palette button for the status bar. It opens upwards because the bar is at the bottom.
 export default function AccentPicker() {
   const [accent, setAccent] = useAccent()
 

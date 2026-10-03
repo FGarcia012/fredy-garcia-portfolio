@@ -1,4 +1,3 @@
-// Work experience, newest first. Add a new object to add a new job.
 export const experience = [
   {
     title: 'Software Developer',

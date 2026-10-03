@@ -6,22 +6,12 @@ import { projects } from '../data/projects'
 import { methodologies, skills } from '../data/skills'
 import { ACCENT_NAMES } from './accent'
 
-// Pure terminal logic: no React in here. `runCommand` returns what to print
-// and an optional action (navigate, open a link, clear, change theme) for the hook to perform.
-//
-// A line is one of:
-//   { text, tone? }          tone: 'muted' | 'error' | 'success'
-//   { text, href }           a link
-//   { cmd, desc }            a row of the help table
-
 const BAR_SIZE = 10
 
-// Page names used by `cd` and Tab: "home", "about", "values", ..., plus "projects/<slug>"
 const pageNames = navItems.map((item) => item.path.slice(1) || 'home')
 const projectNames = projects.map((project) => `projects/${project.slug}`)
 const PAGE_PATHS = Object.fromEntries(navItems.map((item) => [item.path.slice(1) || 'home', item.path]))
 
-// "about.md" -> "about", "projects/" -> "projects", "~" -> "home". Returns a route or null.
 function resolvePath(argument = '') {
   const clean = argument
     .toLowerCase()
@@ -38,7 +28,6 @@ function resolvePath(argument = '') {
 const text = (value, tone) => ({ text: value, tone })
 const link = (value, href) => ({ text: value, href })
 
-// Commands in the order they appear in `help`
 const commands = {
   help: {
     desc: 'Show this list',
@@ -169,7 +158,6 @@ const commands = {
   },
 }
 
-// Easter egg: not listed in `help`
 function runSudo(args) {
   if (args.length === 0) return { lines: [text('usage: sudo <command>', 'muted')] }
   if (args.join(' ').toLowerCase() === 'hire-me') {
@@ -198,7 +186,6 @@ export function runCommand(raw, context) {
   return { lines: [text(`${name}: command not found. Type 'help' to see the commands.`, 'error')] }
 }
 
-// Longest text that all options start with ("pro" for "projects" + "profile")
 function commonPrefix(options) {
   return options.reduce((prefix, option) => {
     let i = 0
@@ -207,14 +194,11 @@ function commonPrefix(options) {
   }, options[0])
 }
 
-// Tab completion. Returns { value, options }: the new input text and, when several
-// choices are possible, the list to print (like bash does).
 export function completeInput(input) {
   const endsWithSpace = /\s$/.test(input)
   const tokens = input.trim().split(/\s+/).filter(Boolean)
   if (tokens.length === 0) return { value: input, options: [] }
 
-  // "cd ab" -> completing the argument "ab"; "cd " -> completing an empty argument
   const completingCommand = tokens.length === 1 && !endsWithSpace
   const partial = endsWithSpace ? '' : tokens[tokens.length - 1]
   const command = tokens[0].toLowerCase()
@@ -233,7 +217,6 @@ export function completeInput(input) {
 
   const base = input.slice(0, input.length - partial.length)
   if (matches.length === 1) {
-    // A command that takes an argument gets a space after it, ready for typing
     const takesArgument = completingCommand && ['cd', 'theme'].includes(matches[0])
     return { value: `${base}${matches[0]}${takesArgument ? ' ' : ''}`, options: [] }
   }

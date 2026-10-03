@@ -3,7 +3,6 @@ import { getPageMeta } from '../data/navigation'
 import { profile } from '../data/profile'
 import AccentPicker from './AccentPicker'
 
-// Bottom bar like VS Code. Items hide on small screens so it stays on one line.
 export default function StatusBar({ pathname, scanlines, onToggleScanlines }) {
   const { file } = getPageMeta(pathname)
 

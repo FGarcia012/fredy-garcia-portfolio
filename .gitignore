@@ -22,3 +22,8 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Local environment files and Vercel CLI folder
+.env
+.env.*
+.vercel

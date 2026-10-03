@@ -1,4 +1,3 @@
-// Education, newest first.
 export const education = [
   {
     title: 'B.Sc. in Computer Science and Systems Engineering',

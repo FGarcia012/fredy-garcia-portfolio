@@ -2,13 +2,11 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import { BrowserRouter } from 'react-router-dom'
 
-// Self-hosted fonts (installed from npm, so no external requests)
 import '@fontsource/jetbrains-mono/400.css'
 import '@fontsource/jetbrains-mono/700.css'
 import '@fontsource/inter/400.css'
 import '@fontsource/inter/600.css'
 
-// Order matters: Bootstrap first, then our files so they can override it
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './styles/theme.css'
 import './styles/animations.css'

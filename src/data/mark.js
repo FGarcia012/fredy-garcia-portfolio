@@ -1,7 +1,7 @@
 import { FaSearch, FaTools, FaUsers } from 'react-icons/fa'
 
 export const mark = {
-  tagline: 'I turn curiosity into working software.', // [EDIT] your own tagline
+  tagline: 'I turn curiosity into working software.',
   statement: [
     'I believe good software starts with curiosity.',
     'I look for new ideas and tools, and I test them in real projects.',
@@ -13,6 +13,6 @@ export const mark = {
     { title: 'Craftsmanship', Icon: FaTools, text: 'I care about clean and readable code.' },
     { title: 'Collaboration', Icon: FaUsers, text: 'I share what I learn and I build with others.' },
   ],
-  // [EDIT] replace with a quote you like (always keep the author)
+  
   quote: { text: 'Talk is cheap. Show me the code.', author: 'Linus Torvalds' },
 }

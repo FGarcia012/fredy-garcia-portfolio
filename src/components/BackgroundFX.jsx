@@ -1,9 +1,6 @@
 import { useEffect, useRef } from 'react'
 import useMediaQuery from '../hooks/useMediaQuery'
 
-// Decorative background: a dot grid that drifts slowly, a soft glow that follows the mouse,
-// and optional scanlines (CRT look). Motion and glow run only with a mouse (fine pointer)
-// and when the visitor has NOT asked for reduced motion. Phones get a still grid.
 export default function BackgroundFX({ scanlines }) {
   const layerRef = useRef(null)
   const hasMouse = useMediaQuery('(hover: hover) and (pointer: fine)')
@@ -14,7 +11,6 @@ export default function BackgroundFX({ scanlines }) {
     const layer = layerRef.current
     if (!effects || !layer) return undefined
 
-    // requestAnimationFrame: at most one update per screen frame, even if the mouse sends more
     let frame = 0
     const onMove = (event) => {
       cancelAnimationFrame(frame)

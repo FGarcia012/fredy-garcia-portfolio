@@ -1,6 +1,5 @@
 const STEPS = ['Backlog', 'Sprint', 'Review', 'Retro']
 
-// Small visual cycle: Backlog -> Sprint -> Review -> Retro
 export default function ScrumCycle() {
   return (
     <>

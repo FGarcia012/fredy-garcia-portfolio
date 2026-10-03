@@ -1,7 +1,5 @@
 import { useEffect, useState } from 'react'
 
-// Like useState, but the value survives page reloads.
-// Every storage call is wrapped in try/catch because storage can be blocked (private mode).
 export default function useLocalStorage(key, initialValue) {
   const [value, setValue] = useState(() => {
     try {
@@ -16,7 +14,6 @@ export default function useLocalStorage(key, initialValue) {
     try {
       window.localStorage.setItem(key, JSON.stringify(value))
     } catch {
-      // Storage unavailable: the app keeps working without saving
     }
   }, [key, value])
 
