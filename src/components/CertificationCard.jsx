@@ -11,7 +11,6 @@ function formatDate(isoDate) {
   return `${MONTHS[Number(month) - 1]} ${year}`
 }
 
-
 export default function CertificationCard({ cert }) {
   const { type, title, issuer, issuedOn, url, file, verifyUrl, image } = cert
   const [showFile, setShowFile] = useState(false)
@@ -22,7 +21,7 @@ export default function CertificationCard({ cert }) {
     <Card className="cert-card h-100">
       <Card.Body className="d-flex gap-3">
         {image ? (
-          <img className="cert-badge" src={image} alt="" width="64" height="64" loading="lazy" />
+          <img className="cert-badge" src={image} alt="" width="96" height="96" loading="lazy" />
         ) : (
           <div className="icon-box">
             <FaCertificate aria-hidden="true" />

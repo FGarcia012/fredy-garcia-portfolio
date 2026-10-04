@@ -3,47 +3,55 @@ export const projects = [
     slug: 'ahorra-hoy',
     file: 'ahorra-hoy.json',
     title: 'AHORRA HOY',
-    summary: 'Personal savings app to track and plan savings.',
-    stack: ['Node.js', 'Express', 'MongoDB', 'React'],
+    summary: 'Personal savings app to plan goals, record movements and follow your financial statistics.',
+    stack: ['React', 'Vite', 'Tailwind CSS', 'Node.js', 'Express', 'MongoDB'],
     tags: ['Web', 'Individual'],
     status: 'Completed',
-    github: null, // [EDIT]
-    demo: 'https://ahorrahoy-2c3a6.web.app',
+    repositories: [
+      { label: 'Front end', url: 'https://github.com/FGarcia012/AhorraHoy_Front' },
+      { label: 'Back end', url: 'https://github.com/FGarcia012/AhorraHoy_Backend' },
+    ],
+    demo: 'https://ahorrahoy-2c3a6.web.app/',
     featured: true,
     overview:
-      'AHORRA HOY is a personal savings app. Users set savings goals, record deposits and withdrawals, and follow their progress and financial statistics.',
-    role: 'Individual project.', // [EDIT] describe exactly what you built
+      'AHORRA HOY is a full-stack personal savings app. Users create a savings goal, record deposits and withdrawals, register their income and read statistics about their money. The back end is a documented REST API.',
+    role: 'Individual project: front end, back end and deployment.',
     features: [
-      'Savings goals with progress tracking',
-      'Deposits and withdrawals',
-      'Income and expense records',
-      'Financial statistics',
-      'Sign in with Google',
-    ], // [EDIT] check this list
+      'Savings goals with a picture and progress tracking',
+      'Deposits and withdrawals linked to the goal',
+      'Financial information and income records',
+      'Personal statistics',
+      'Sign in with email and password or with Google',
+      'Profile picture upload',
+      'Interactive API documentation with Swagger UI',
+    ],
     architecture: {
       flow: ['React app', 'Express API', 'MongoDB'],
       notes: [
         'The React front end is hosted on Firebase Hosting.',
-        'The Node.js and Express API is hosted on Vercel and uses Mongoose to talk to MongoDB.',
-        'Google sign-in uses @react-oauth/google on the front end and google-auth-library on the back end.',
+        'The API follows the flow route, validator and middleware, controller, model.',
+        'Authentication uses JWT, and passwords are hashed with Argon2.',
+        'The API is protected with Helmet, CORS and rate limiting, and inputs are checked with express-validator.',
+        'Pictures are handled with Multer and Cloudinary.',
       ],
     },
     challenges: [
-      'Money and floating point: amounts are stored as numbers, so I am comparing ways to avoid rounding errors (toFixed, BigNumber.js, decimal.js and Dinero.js).',
-    ], // [EDIT] add what you learned
-    screenshots: [], // [EDIT] add real screenshots
+      'Money and floating point: amounts are stored as integer cents, so sums never suffer rounding errors.',
+      'Security: hashing passwords with Argon2, validating every input and keeping secrets out of the repository.',
+    ],
+    screenshots: [],
     linksNote: null,
   },
   {
     slug: 'odoo-erp-distefano',
-    file: 'odoo-erp.json',
+    file: 'odoo-erp.py',
     title: 'Odoo ERP Customization',
     summary:
       'Custom modules, interface improvements and system updates for the ERP of a Guatemalan textile company.',
-    stack: ['Odoo 8'],
+    stack: ['Odoo 8', 'Python', 'XML', 'PostgreSQL'],
     tags: ['Professional'],
     status: 'Completed',
-    github: null, // private company code: no public link
+    repositories: [],
     demo: null,
     featured: false,
     overview:
@@ -56,7 +64,7 @@ export const projects = [
       'On-site technical support at events: connecting thermal printers to the network so orders could be received',
     ],
     architecture: null,
-    challenges: null, // [EDIT] add what you learned
+    challenges: null,
     screenshots: [],
     linksNote: 'The code is private company work, so there are no public links. I describe it only in general terms.',
   },
@@ -65,11 +73,13 @@ export const projects = [
     file: 'portfolio.jsx',
     title: 'This Portfolio',
     summary: 'IDE-style personal site with a custom typing engine and an interactive terminal.',
-    stack: ['React', 'Bootstrap', 'Vite'],
+    stack: ['React', 'Bootstrap', 'Sass', 'Vite'],
     tags: ['Web', 'Individual'],
-    status: 'In progress',
-    github: 'https://github.com/FGarcia012/fredy-garcia-portfolio',
-    demo: null,
+    status: 'Completed',
+    repositories: [
+      { label: 'Source code', url: 'https://github.com/FGarcia012/fredy-garcia-portfolio' },
+    ],
+    demo: 'https://fredy-garcia-portfolio.vercel.app/',
     featured: true,
     overview:
       'My personal portfolio, designed like a developer workspace: a code-editor layout, a custom typing animation and a command-line style.',
@@ -79,7 +89,7 @@ export const projects = [
       'Custom typing engine that respects reduced-motion settings',
       'Boot screen, MCI goal tracker and README-style project pages',
       'All content lives in data files, so adding a project needs no component changes',
-      'Interactive terminal (in progress)',
+      'Interactive terminal with commands to explore the site',
     ],
     architecture: {
       flow: ['Data files', 'React pages', 'Bootstrap theme'],
@@ -99,23 +109,67 @@ export const projects = [
     file: 'blfags.json',
     title: 'BLFAGS',
     summary:
-      'Anonymous personal blog: people publish without a real name or a visible profile. Posts can be public or private, and private posts are visible only to their author.',
-    stack: [], // [EDIT] technologies used
-    tags: ['Web'],
-    status: null, // [EDIT]
-    github: null, // [EDIT]
-    demo: null, // [EDIT]
+      'Anonymous personal blog: people publish under a pseudonym. Posts can be public or private, and private posts are visible only to their author.',
+    stack: ['React', 'Vite', 'Tailwind CSS', 'Node.js', 'Express', 'MongoDB'],
+    tags: ['Web', 'Individual'],
+    status: 'Completed',
+    repositories: [
+      { label: 'Front end', url: 'https://github.com/FGarcia012/BLFAGS_Front' },
+      { label: 'Back end', url: 'https://github.com/FGarcia012/BLFAGS_Back' },
+    ],
+    demo: 'https://bl-front.web.app/',
     featured: true,
     overview:
-      'An anonymous personal blog. People publish without a real name or a visible profile.',
-    role: null, // [EDIT]
+      'BLFAGS is an anonymous personal blog. Only a pseudonym is shown, so people can write freely. Each post can be public or private. The back end is a REST API with posts, comments, reactions and hashtags.',
+    role: null,
     features: [
-      'Anonymous publishing: no real name and no visible profile',
-      'Public and private posts',
-      'Private posts are visible only to their author',
+      'Anonymous publishing: only a pseudonym is visible',
+      'Public and private posts, private ones visible only to their author',
+      'Comments and reactions on posts',
+      'Hashtags to organize posts',
+      'Image and video uploads',
+      'Interactive API documentation with Swagger UI',
+    ],
+    architecture: {
+      flow: ['React app', 'Express API', 'MongoDB'],
+      notes: [
+        'The React front end is hosted on Firebase Hosting.',
+        'The Express API is configured to run on Vercel.',
+        'Authentication uses JWT, and passwords are hashed with Argon2.',
+        'The API is protected with Helmet, CORS and rate limiting.',
+        'Media files are handled with Multer and Cloudinary.',
+      ],
+    },
+    challenges: null,
+    screenshots: [],
+    linksNote: null,
+  },
+  {
+    slug: 'school-management',
+    file: 'school-management.py',
+    title: 'School Management',
+    summary:
+      'Odoo 8 module to manage students, teachers, courses, classrooms, schedules and exams, with access by role.',
+    stack: ['Python', 'Odoo 8', 'XML', 'PostgreSQL'],
+    tags: ['Web', 'Individual', 'Professional'],
+    status: 'Completed',
+    repositories: [
+      { label: 'Source code', url: 'https://github.com/FGarcia012/School_Management' },
+    ],
+    demo: null,
+    featured: false,
+    overview:
+      'A school management module for Odoo 8. It handles students, teachers, courses, classrooms, schedules, exams and grades, and shows each user only what their role allows.',
+    role: null,
+    features: [
+      'Three roles: Super Admin, Teacher and Student',
+      'Students get read-only views, without create, edit or delete buttons',
+      'Teachers manage the students, exams and grades of their own courses',
+      'Classrooms with capacity, and class schedules',
+      'Reports for each area and wizards for advanced management',
     ],
     architecture: null,
-    challenges: null, // [EDIT]
+    challenges: null,
     screenshots: [],
     linksNote: null,
   },

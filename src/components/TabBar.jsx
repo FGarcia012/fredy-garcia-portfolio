@@ -5,7 +5,6 @@ export default function TabBar({ pathname }) {
 
   return (
     <div className="tabbar d-none d-lg-block">
-      {/* The tab is decorative: the breadcrumb below gives screen readers the same info */}
       <div className="editor-tab" aria-hidden="true">
         <Icon className="file-icon" />
         <span>{file}</span>

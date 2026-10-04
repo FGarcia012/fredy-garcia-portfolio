@@ -32,7 +32,6 @@ export default function BackgroundFX({ scanlines }) {
         <div className="bg-grid" />
         <div className="bg-glow" />
       </div>
-      {/* Scanlines sit above everything, but let every click pass through */}
       {effects && scanlines && <div className="bg-scanlines" aria-hidden="true" />}
     </>
   )

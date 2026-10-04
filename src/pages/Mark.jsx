@@ -12,7 +12,6 @@ export default function Mark() {
     <>
       <PageHeader command="cat mark.md" title="Personal Mark" />
 
-      {/* Editor "document": every <li> is one numbered line (numbers come from CSS counters) */}
       <Reveal>
         <ol className="code-doc" aria-label="Personal brand statement">
           <li><span className="doc-heading"># Personal Mark</span></li>

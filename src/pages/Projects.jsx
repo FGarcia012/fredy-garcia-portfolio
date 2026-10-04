@@ -42,7 +42,6 @@ export default function Projects() {
           </Button>
         ))}
       </div>
-      {/* Screen readers hear the result of the filter */}
       <p className="visually-hidden" role="status">
         Showing {visibleProjects.length} {visibleProjects.length === 1 ? 'project' : 'projects'}
       </p>

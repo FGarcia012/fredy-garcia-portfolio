@@ -18,7 +18,6 @@ export default function StatusBar({ pathname, scanlines, onToggleScanlines }) {
         </span>
       </div>
       <div className="status-group">
-        {/* Scanlines only exist on desktop with a mouse, so the button is desktop-only too */}
         <button
           type="button"
           className="crt-toggle d-none d-lg-inline-flex"

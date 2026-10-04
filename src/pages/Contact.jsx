@@ -80,7 +80,6 @@ export default function Contact() {
         ))}
       </Row>
 
-      {/* Fixed above the status bar so it never hides behind it */}
       <ToastContainer className="position-fixed p-3 toast-area" position="bottom-end">
         <Toast show={Boolean(toast)} onClose={() => setToast(null)} delay={3000} autohide>
           <Toast.Body>{toast}</Toast.Body>

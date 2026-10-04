@@ -36,8 +36,8 @@ export default function ProjectDetail() {
     )
   }
 
-  const { title, file, stack, status, overview, role, features, architecture, challenges, screenshots, github, demo, linksNote } = project
-  const hasLinks = Boolean(github || demo || linksNote)
+  const { title, file, stack, status, overview, role, features, architecture, challenges, screenshots, repositories, demo, linksNote } = project
+  const hasLinks = Boolean(hasItems(repositories) || demo || linksNote)
 
   return (
     <>
@@ -128,11 +128,11 @@ export default function ProjectDetail() {
 
             <ReadmeSection title="Links" show={hasLinks}>
               <div className="d-flex flex-wrap gap-2">
-                {github && (
-                  <Button href={github} target="_blank" rel="noopener noreferrer" variant="outline-primary">
-                    GitHub
+                {repositories.map((repository) => (
+                  <Button key={repository.url} href={repository.url} target="_blank" rel="noopener noreferrer" variant="outline-primary">
+                    {repositories.length > 1 ? `GitHub · ${repository.label}` : 'GitHub'}
                   </Button>
-                )}
+                ))}
                 {demo && (
                   <Button href={demo} target="_blank" rel="noopener noreferrer" variant="outline-primary">
                     Live demo

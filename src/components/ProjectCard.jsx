@@ -2,7 +2,7 @@ import { Badge, Button, Card } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 
 export default function ProjectCard({ project }) {
-  const { slug, file, title, summary, stack, status, github, demo } = project
+  const { slug, file, title, summary, stack, status, repositories, demo } = project
 
   return (
     <Card className="project-card h-100">
@@ -33,11 +33,11 @@ export default function ProjectCard({ project }) {
         )}
         <div className="project-actions d-flex flex-wrap gap-2 mt-auto">
           <Button as={Link} to={`/projects/${slug}`} variant="primary">Details</Button>
-          {github && (
-            <Button href={github} target="_blank" rel="noopener noreferrer" variant="outline-secondary">
-              GitHub
+          {repositories.map((repository) => (
+            <Button key={repository.url} href={repository.url} target="_blank" rel="noopener noreferrer" variant="outline-secondary">
+              {repositories.length > 1 ? `GitHub · ${repository.label}` : 'GitHub'}
             </Button>
-          )}
+          ))}
           {demo && (
             <Button href={demo} target="_blank" rel="noopener noreferrer" variant="outline-secondary">
               Live demo

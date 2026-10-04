@@ -24,7 +24,6 @@ export default function TechMarquee() {
     <div className="marquee">
       <div className="marquee-track">
         <Group />
-        {/* The second copy is only for the loop: screen readers skip it */}
         <Group hidden />
       </div>
     </div>

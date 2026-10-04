@@ -16,7 +16,6 @@ export default function AccentPicker() {
       >
         <FaPalette aria-hidden="true" />
       </Dropdown.Toggle>
-      {/* "fixed" lets the menu escape the small status bar without being clipped */}
       <Dropdown.Menu className="accent-menu" popperConfig={{ strategy: 'fixed' }}>
         {ACCENT_NAMES.map((name) => (
           <Dropdown.Item key={name} as="button" type="button" active={name === accent} onClick={() => setAccent(name)}>

@@ -25,7 +25,6 @@ export default function Cv() {
     <>
       <PageHeader command="open cv.pdf" title="Curriculum Vitae" />
 
-      {/* The buttons appear only when the PDF path is set in profile.js */}
       {profile.cvFile && (
         <div className="d-flex flex-wrap gap-2 mb-4">
           <Button href={profile.cvFile} download variant="primary">
@@ -51,7 +50,7 @@ export default function Cv() {
               <i />
               <i />
             </span>
-            <span className="window-title">Fredy-Garcia-CV-EN.pdf</span>
+            <span className="window-title">Fredy-Garcia-CV.pdf</span>
           </div>
           <Card.Body className="p-3 p-md-4">
             <header className="cv-header">

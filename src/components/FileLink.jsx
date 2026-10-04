@@ -11,7 +11,6 @@ export default function FileLink({ item, collapsed = false, onNavigate }) {
       title={collapsed ? item.file : undefined}
     >
       <Icon className="file-icon" aria-hidden="true" />
-      {/* Hidden visually when collapsed, but still read by screen readers */}
       <span className={collapsed ? 'visually-hidden' : ''}>{item.file}</span>
     </NavLink>
   )

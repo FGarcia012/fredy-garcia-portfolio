@@ -4,12 +4,12 @@ export const profile = {
   role: 'Full-Stack Developer',
   location: 'Guatemala',
   availability: 'Open to opportunities',
-  availabilityNote: null, //Colocar a que puesto quiero aplicar en algun momento, por ejemplo: "Open to Front-End Developer opportunities"
+  availabilityNote: 'Open to junior full-stack and back-end developer roles',
   methodology: 'Scrum',
   roles: ['Full-Stack Developer', 'Computer Science & Systems Student', 'Scrum Team Player'],
   pitch: 'I build secure, efficient and scalable web and desktop applications, and I never stop learning.',
-  projectsBuilt: 19, 
-  cvFile: null, 
+  projectsBuilt: 19,
+  cvFile: '/cv/Fredy-Garcia-CV.pdf',
 
   about: [
     "I'm a Computer Science and Systems Engineering student at Universidad de San Carlos de Guatemala (USAC) and a graduate of the Technical Diploma in Computer Science (Perito en Computación). I combine formal training with a self-taught mindset: I keep learning beyond my curriculum, and I specialize in software development.",
@@ -18,7 +18,7 @@ export const profile = {
   summary:
     "Passionate and detail-oriented Computer Science student with hands-on experience in academic, personal and professional projects. Skilled in web and desktop development with Java, Python, C++, JavaScript, React, Node.js and MySQL/MongoDB. I work with Scrum and I'm motivated to build secure, efficient and scalable software while continuously learning new technologies.",
 
-    languages: [
+  languages: [
     { name: 'Spanish', label: 'Native', level: 100 },
     { name: 'English', label: 'Intermediate (B1/B2)', level: 60 },
   ],

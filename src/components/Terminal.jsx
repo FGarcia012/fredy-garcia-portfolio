@@ -59,7 +59,6 @@ export default function Terminal() {
           </span>
           <span className="window-title">fredy@guatemala: ~</span>
         </div>
-        {/* The click only helps mouse users; keyboard users reach the input with Tab */}
         <div className="terminal-body" onClick={focusInput}>
           <div ref={outputRef} className="terminal-output" role="log" aria-live="polite" aria-label="Terminal output">
             {lines.map((line) => (
@@ -85,7 +84,6 @@ export default function Terminal() {
         </div>
       </Card>
 
-      {/* Tappable commands for phones and tablets, where typing is slow */}
       <div className="terminal-chips d-lg-none" role="group" aria-label="Quick commands">
         {CHIP_COMMANDS.map((command) => (
           <Button key={command} size="sm" variant="outline-secondary" onClick={() => run(command)}>
