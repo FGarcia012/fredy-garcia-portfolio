@@ -55,7 +55,7 @@ export default function Cv() {
           <Card.Body className="p-3 p-md-4">
             <header className="cv-header">
               <h2 className="cv-name">{profile.name}</h2>
-              <p className="cv-role">{profile.role}</p>
+              <p className="cv-role">{profile.cvRole}</p>
               <ul className="list-unstyled d-flex flex-wrap gap-3 mb-0">
                 {headerLinks.map(({ id, label, Icon, href }) => (
                   <li key={id}>
@@ -68,7 +68,7 @@ export default function Cv() {
             </header>
 
             <section className="cv-section">
-              <SectionTitle>Professional Summary</SectionTitle>
+              <SectionTitle>Professional Profile</SectionTitle>
               <p className="mb-0">{profile.summary}</p>
             </section>
 

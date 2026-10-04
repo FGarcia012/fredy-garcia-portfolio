@@ -1,14 +1,20 @@
 export const experience = [
   {
-    title: 'Software Developer',
+    title: 'Professional Internship: Odoo 8 Developer',
     place: 'Distefano',
     note: 'Guatemalan textile company',
     period: 'Aug 2025 – Nov 2025',
     bullets: [
-      "Customized and improved the company's Odoo 8 ERP by developing custom modules tailored to business needs.",
-      'Optimized the visual interface and user experience of the system.',
-      'Updated the system to adapt it to changing business requirements.',
-      'Provided on-site technical support at events, connecting thermal printers to the network so orders could be received efficiently.',
+      'Improved the user interface (UI) and user experience (UX) of the Odoo 8 ERP to make it clearer and easier to use.',
+      'Developed a custom module that supports the Human Resources and Warehouse processes.',
+      'Set up and integrated thermal printers into the network during events, speeding up order reception.',
+    ],
+  },
+  {
+    title: 'Academic & Personal Projects',
+    bullets: [
+      'Developed team projects applying Scrum (sprints, roles and follow-up meetings) during my studies.',
+      'Built personal and practice applications with the technologies in my stack, available in my portfolio.',
     ],
   },
 ]

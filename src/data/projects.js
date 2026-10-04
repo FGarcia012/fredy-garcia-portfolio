@@ -56,12 +56,11 @@ export const projects = [
     featured: false,
     overview:
       'Professional work for Distefano, a Guatemalan textile company, from Aug 2025 to Nov 2025. I worked on the ERP the company uses every day.',
-    role: 'Software Developer at Distefano.',
+    role: 'Odoo 8 Developer (professional internship) at Distefano.',
     features: [
-      'Custom Odoo 8 modules built for the needs of the business',
-      'Improved visual interface and user experience',
-      'System updates to follow changing business requirements',
-      'On-site technical support at events: connecting thermal printers to the network so orders could be received',
+      'Improved the interface (UI) and user experience (UX) of the Odoo 8 ERP',
+      'Custom module that supports the Human Resources and Warehouse processes',
+      'Thermal printers set up and connected to the network during events, speeding up order reception',
     ],
     architecture: null,
     challenges: null,

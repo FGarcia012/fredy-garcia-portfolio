@@ -1,8 +1,8 @@
 export const education = [
   {
-    title: 'B.Sc. in Computer Science and Systems Engineering',
+    title: 'Engineering in Computer Science and Systems',
     place: 'Universidad de San Carlos de Guatemala (USAC)',
-    period: 'In progress (2nd semester, 2026)',
+    period: '2026 – Present (currently in the 2nd semester)',
   },
   {
     title: 'Technical Diploma in Computer Science (Perito en Computación)',
