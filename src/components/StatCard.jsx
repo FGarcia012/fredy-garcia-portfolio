@@ -14,11 +14,11 @@ export default function StatCard({ value, label, delay = 0 }) {
       style={{ '--reveal-delay': `${delay}ms` }}
     >
       <Card.Body>
-        <div className="stat-value">
-          <span className="visually-hidden">{value}</span>
-          <span aria-hidden="true">{isNumber ? count : value}</span>
+        <div className='stat-value'>
+          <span className='visually-hidden'>{value}</span>
+          <span aria-hidden='true'>{isNumber ? count : value}</span>
         </div>
-        <div className="stat-label">{label}</div>
+        <div className='stat-label'>{label}</div>
       </Card.Body>
     </Card>
   )

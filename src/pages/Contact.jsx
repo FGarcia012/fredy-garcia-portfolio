@@ -24,53 +24,53 @@ export default function Contact() {
 
   return (
     <>
-      <PageHeader command="./contact.sh" title="Contact" />
+      <PageHeader command='./contact.sh' title='Contact' />
 
       <Typewriter
-        as="p"
-        id="contact-intro"
-        className="contact-intro"
-        lines={["Interested in my work or want to collaborate? Let's talk."]}
+        as='p'
+        id='contact-intro'
+        className='contact-intro'
+        lines={['Interested in my work or want to collaborate? Let\'s talk.']}
       />
 
-      <p className="d-flex flex-wrap align-items-center gap-2 mb-4">
-        <Badge bg="warning" text="dark" className="open-badge">
-          <span className="status-dot" aria-hidden="true" /> {profile.availability}
+      <p className='d-flex flex-wrap align-items-center gap-2 mb-4'>
+        <Badge bg='warning' text='dark' className='open-badge'>
+          <span className='status-dot' aria-hidden='true' /> {profile.availability}
         </Badge>
-        {profile.availabilityNote && <span className="text-secondary">{profile.availabilityNote}</span>}
+        {profile.availabilityNote && <span className='text-secondary'>{profile.availabilityNote}</span>}
       </p>
 
-      <Row xs={1} md={2} className="g-3">
+      <Row xs={1} md={2} className='g-3'>
         {contacts.map(({ id, label, Icon, href, text }, index) => (
           <Col key={id}>
-            <Reveal delay={index * 100} className="h-100">
-              <Card className="contact-card h-100">
-                <Card.Body className="d-flex align-items-center gap-3">
-                  <div className="icon-box">
-                    <Icon aria-hidden="true" />
+            <Reveal delay={index * 100} className='h-100'>
+              <Card className='contact-card h-100'>
+                <Card.Body className='d-flex align-items-center gap-3'>
+                  <div className='icon-box'>
+                    <Icon aria-hidden='true' />
                   </div>
-                  <div className="flex-grow-1 min-w-0">
-                    <Card.Title as="h2" className="h6 mb-1">
+                  <div className='flex-grow-1 min-w-0'>
+                    <Card.Title as='h2' className='h6 mb-1'>
                       <a
-                        className="stretched-link"
+                        className='stretched-link'
                         href={href}
                         target={id === 'email' ? undefined : '_blank'}
-                        rel="noopener noreferrer"
+                        rel='noopener noreferrer'
                       >
                         {label}
-                        {id !== 'email' && <span className="visually-hidden"> (opens in a new tab)</span>}
+                        {id !== 'email' && <span className='visually-hidden'> (opens in a new tab)</span>}
                       </a>
                     </Card.Title>
-                    <Card.Text className="text-secondary small mb-0 text-break">{text}</Card.Text>
+                    <Card.Text className='text-secondary small mb-0 text-break'>{text}</Card.Text>
                   </div>
                   {id === 'email' && (
                     <Button
-                      variant="outline-secondary"
-                      className="copy-btn"
+                      variant='outline-secondary'
+                      className='copy-btn'
                       onClick={copyEmail}
-                      aria-label="Copy email address"
+                      aria-label='Copy email address'
                     >
-                      <FaCopy aria-hidden="true" /> Copy
+                      <FaCopy aria-hidden='true' /> Copy
                     </Button>
                   )}
                 </Card.Body>
@@ -80,7 +80,7 @@ export default function Contact() {
         ))}
       </Row>
 
-      <ToastContainer className="position-fixed p-3 toast-area" position="bottom-end">
+      <ToastContainer className='position-fixed p-3 toast-area' position='bottom-end'>
         <Toast show={Boolean(toast)} onClose={() => setToast(null)} delay={3000} autohide>
           <Toast.Body>{toast}</Toast.Body>
         </Toast>

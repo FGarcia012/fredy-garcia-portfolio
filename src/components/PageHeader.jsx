@@ -2,9 +2,9 @@ import Typewriter from './Typewriter'
 
 export default function PageHeader({ command, title }) {
   return (
-    <header className="page-header">
+    <header className='page-header'>
       <Typewriter
-        as="h1"
+        as='h1'
         id={`page:${command}`}
         srText={title}
         lines={[

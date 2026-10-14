@@ -28,11 +28,11 @@ export default function BackgroundFX({ scanlines }) {
 
   return (
     <>
-      <div ref={layerRef} className={`bg-fx ${effects ? 'has-effects' : ''}`} aria-hidden="true">
-        <div className="bg-grid" />
-        <div className="bg-glow" />
+      <div ref={layerRef} className={`bg-fx ${effects ? 'has-effects' : ''}`} aria-hidden='true'>
+        <div className='bg-grid' />
+        <div className='bg-glow' />
       </div>
-      {effects && scanlines && <div className="bg-scanlines" aria-hidden="true" />}
+      {effects && scanlines && <div className='bg-scanlines' aria-hidden='true' />}
     </>
   )
 }

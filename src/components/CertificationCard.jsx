@@ -18,43 +18,43 @@ export default function CertificationCard({ cert }) {
   const verifiable = Boolean(verifyUrl || (type === 'link' && url))
 
   return (
-    <Card className="cert-card h-100">
-      <Card.Body className="d-flex gap-3">
+    <Card className='cert-card h-100'>
+      <Card.Body className='d-flex gap-3'>
         {image ? (
-          <img className="cert-badge" src={image} alt="" width="96" height="96" loading="lazy" />
+          <img className='cert-badge' src={image} alt='' width='96' height='96' loading='lazy' />
         ) : (
-          <div className="icon-box">
-            <FaCertificate aria-hidden="true" />
+          <div className='icon-box'>
+            <FaCertificate aria-hidden='true' />
           </div>
         )}
-        <div className="min-w-0">
-          <Card.Title as="h3" className="h6 mb-1">
+        <div className='min-w-0'>
+          <Card.Title as='h3' className='h6 mb-1'>
             {type === 'link' ? (
-              <a className="stretched-link" href={url} target="_blank" rel="noopener noreferrer">
+              <a className='stretched-link' href={url} target='_blank' rel='noopener noreferrer'>
                 {title}
-                <span className="visually-hidden"> (opens in a new tab)</span>
+                <span className='visually-hidden'> (opens in a new tab)</span>
               </a>
             ) : (
-              <button type="button" className="cert-open stretched-link" onClick={() => setShowFile(true)}>
+              <button type='button' className='cert-open stretched-link' onClick={() => setShowFile(true)}>
                 {title}
-                <span className="visually-hidden"> (opens the certificate in a window)</span>
+                <span className='visually-hidden'> (opens the certificate in a window)</span>
               </button>
             )}
           </Card.Title>
-          <Card.Text className="text-secondary small mb-2">
+          <Card.Text className='text-secondary small mb-2'>
             {issuer}
             {date && ` · ${date}`}
           </Card.Text>
-          <div className="d-flex flex-wrap align-items-center gap-2">
+          <div className='d-flex flex-wrap align-items-center gap-2'>
             {verifiable && (
-              <Badge bg={null} className="verified-badge">
+              <Badge bg={null} className='verified-badge'>
                 Verifiable online
               </Badge>
             )}
             {type === 'file' && verifyUrl && (
-              <a className="cert-verify small" href={verifyUrl} target="_blank" rel="noopener noreferrer">
+              <a className='cert-verify small' href={verifyUrl} target='_blank' rel='noopener noreferrer'>
                 Verify on Credly
-                <span className="visually-hidden"> (opens in a new tab)</span>
+                <span className='visually-hidden'> (opens in a new tab)</span>
               </a>
             )}
           </div>

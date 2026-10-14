@@ -7,19 +7,19 @@ export default function AccentPicker() {
   const [accent, setAccent] = useAccent()
 
   return (
-    <Dropdown drop="up" align="end" className="accent-picker">
+    <Dropdown drop='up' align='end' className='accent-picker'>
       <Dropdown.Toggle
-        bsPrefix="accent-toggle"
-        variant="link"
+        bsPrefix='accent-toggle'
+        variant='link'
         aria-label={`Accent color: ${accent}. Change accent color`}
-        title="Change accent color"
+        title='Change accent color'
       >
-        <FaPalette aria-hidden="true" />
+        <FaPalette aria-hidden='true' />
       </Dropdown.Toggle>
-      <Dropdown.Menu className="accent-menu" popperConfig={{ strategy: 'fixed' }}>
+      <Dropdown.Menu className='accent-menu' popperConfig={{ strategy: 'fixed' }}>
         {ACCENT_NAMES.map((name) => (
-          <Dropdown.Item key={name} as="button" type="button" active={name === accent} onClick={() => setAccent(name)}>
-            <span className="accent-swatch" style={{ background: ACCENTS[name].hex }} aria-hidden="true" />
+          <Dropdown.Item key={name} as='button' type='button' active={name === accent} onClick={() => setAccent(name)}>
+            <span className='accent-swatch' style={{ background: ACCENTS[name].hex }} aria-hidden='true' />
             {name}
           </Dropdown.Item>
         ))}

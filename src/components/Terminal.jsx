@@ -8,15 +8,15 @@ const PROMPT = 'fredy@guatemala:~$'
 function TerminalLine({ line }) {
   if (line.kind === 'command') {
     return (
-      <div className="term-line">
-        <span className="prompt">{PROMPT}</span> {line.text}
+      <div className='term-line'>
+        <span className='prompt'>{PROMPT}</span> {line.text}
       </div>
     )
   }
   if (line.cmd) {
     return (
-      <div className="term-help">
-        <span className="term-help-cmd">{line.cmd}</span>
+      <div className='term-help'>
+        <span className='term-help-cmd'>{line.cmd}</span>
         <span>{line.desc}</span>
       </div>
     )
@@ -24,8 +24,8 @@ function TerminalLine({ line }) {
   if (line.href) {
     const isMail = line.href.startsWith('mailto:')
     return (
-      <div className="term-line">
-        <a href={line.href} target={isMail ? undefined : '_blank'} rel="noopener noreferrer">
+      <div className='term-line'>
+        <a href={line.href} target={isMail ? undefined : '_blank'} rel='noopener noreferrer'>
           {line.text}
         </a>
       </div>
@@ -49,49 +49,49 @@ export default function Terminal() {
   }
 
   return (
-    <section aria-label="Interactive terminal">
-      <Card className="terminal">
-        <div className="window-bar">
-          <span className="window-dots" aria-hidden="true">
+    <section aria-label='Interactive terminal'>
+      <Card className='terminal'>
+        <div className='window-bar'>
+          <span className='window-dots' aria-hidden='true'>
             <i />
             <i />
             <i />
           </span>
-          <span className="window-title">fredy@guatemala: ~</span>
+          <span className='window-title'>fredy@guatemala: ~</span>
         </div>
-        <div className="terminal-body" onClick={focusInput}>
-          <div ref={outputRef} className="terminal-output" role="log" aria-live="polite" aria-label="Terminal output">
+        <div className='terminal-body' onClick={focusInput}>
+          <div ref={outputRef} className='terminal-output' role='log' aria-live='polite' aria-label='Terminal output'>
             {lines.map((line) => (
               <TerminalLine key={line.id} line={line} />
             ))}
           </div>
-          <div className="terminal-prompt">
-            <span className="prompt" aria-hidden="true">{PROMPT}</span>
+          <div className='terminal-prompt'>
+            <span className='prompt' aria-hidden='true'>{PROMPT}</span>
             <input
               ref={inputRef}
-              type="text"
+              type='text'
               value={input}
               onChange={(event) => setInput(event.target.value)}
               onKeyDown={onKeyDown}
-              aria-label="Terminal command. Press Enter to run."
-              autoComplete="off"
-              autoCapitalize="none"
-              autoCorrect="off"
+              aria-label='Terminal command. Press Enter to run.'
+              autoComplete='off'
+              autoCapitalize='none'
+              autoCorrect='off'
               spellCheck={false}
-              enterKeyHint="send"
+              enterKeyHint='send'
             />
           </div>
         </div>
       </Card>
 
-      <div className="terminal-chips d-lg-none" role="group" aria-label="Quick commands">
+      <div className='terminal-chips d-lg-none' role='group' aria-label='Quick commands'>
         {CHIP_COMMANDS.map((command) => (
-          <Button key={command} size="sm" variant="outline-secondary" onClick={() => run(command)}>
+          <Button key={command} size='sm' variant='outline-secondary' onClick={() => run(command)}>
             {command}
           </Button>
         ))}
       </div>
-      <p className="terminal-tip d-none d-lg-block">
+      <p className='terminal-tip d-none d-lg-block'>
         Tip: type <code>help</code>. Use ↑ ↓ for history and Tab to autocomplete.
       </p>
     </section>

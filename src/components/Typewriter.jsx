@@ -14,16 +14,16 @@ export default function Typewriter({ lines, id, as: Tag = 'div', className, srTe
 
   return (
     <Tag className={className}>
-      <span className="visually-hidden">{srText ?? items.map((item) => item.text).join(' ')}</span>
-      <span aria-hidden="true">
+      <span className='visually-hidden'>{srText ?? items.map((item) => item.text).join(' ')}</span>
+      <span aria-hidden='true'>
         {items.map((item, index) => {
           const started = done || index <= activeLine
           if (!started) return null
           return (
             <span key={item.text} className={`tw-line ${item.className ?? ''}`}>
-              {item.prompt && <span className="prompt">{item.prompt} </span>}
+              {item.prompt && <span className='prompt'>{item.prompt} </span>}
               {typed[index]}
-              {index === activeLine && <span className="tw-cursor">▍</span>}
+              {index === activeLine && <span className='tw-cursor'>▍</span>}
             </span>
           )
         })}

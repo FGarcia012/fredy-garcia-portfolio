@@ -33,10 +33,10 @@ export default function Home() {
 
   return (
     <>
-      <section className="hero" aria-label="Introduction">
+      <section className='hero' aria-label='Introduction'>
         <Typewriter
-          as="h1"
-          id="home-hero"
+          as='h1'
+          id='home-hero'
           srText={profile.name}
           onDone={handleHeroDone}
           lines={[
@@ -44,23 +44,23 @@ export default function Home() {
             { text: profile.name, className: 'hero-name' },
           ]}
         />
-        <RotatingText phrases={profile.roles} active={heroDone} className="role-line" />
-        <p className="hero-pitch">{profile.pitch}</p>
+        <RotatingText phrases={profile.roles} active={heroDone} className='role-line' />
+        <p className='hero-pitch'>{profile.pitch}</p>
 
-        <div className="d-flex flex-wrap align-items-center gap-2 gap-md-3 mb-3">
-          <Button as={Link} to="/projects" variant="primary">View projects</Button>
+        <div className='d-flex flex-wrap align-items-center gap-2 gap-md-3 mb-3'>
+          <Button as={Link} to='/projects' variant='primary'>View projects</Button>
           {profile.cvFile && (
-            <Button href={profile.cvFile} download variant="outline-primary">Download CV</Button>
+            <Button href={profile.cvFile} download variant='outline-primary'>Download CV</Button>
           )}
-          <Button as={Link} to="/contact" variant="outline-secondary">Contact me</Button>
+          <Button as={Link} to='/contact' variant='outline-secondary'>Contact me</Button>
         </div>
-        <Badge bg="warning" text="dark" className="open-badge">
-          <span className="status-dot" aria-hidden="true" /> {profile.availability}
+        <Badge bg='warning' text='dark' className='open-badge'>
+          <span className='status-dot' aria-hidden='true' /> {profile.availability}
         </Badge>
       </section>
 
-      <section aria-label="Quick facts" className="mt-5">
-        <Row className="g-3">
+      <section aria-label='Quick facts' className='mt-5'>
+        <Row className='g-3'>
           {stats.map((stat, index) => (
             <Col key={stat.label} xs={6} lg={3}>
               <StatCard value={stat.value} label={stat.label} delay={index * 100} />
@@ -69,12 +69,12 @@ export default function Home() {
         </Row>
       </section>
 
-      <section className="mt-5">
+      <section className='mt-5'>
         <SectionTitle>Featured projects</SectionTitle>
-        <Row className="g-4">
+        <Row className='g-4'>
           {featuredProjects.map((project, index) => (
             <Col key={project.slug} md={6} xl={4}>
-              <Reveal delay={index * 120} className="h-100">
+              <Reveal delay={index * 120} className='h-100'>
                 <ProjectCard project={project} />
               </Reveal>
             </Col>
@@ -82,26 +82,26 @@ export default function Home() {
         </Row>
       </section>
 
-      <section className="mt-5">
+      <section className='mt-5'>
         <SectionTitle>Try the terminal</SectionTitle>
         <Terminal />
       </section>
 
-      <section className="mt-5" aria-label="Technologies">
+      <section className='mt-5' aria-label='Technologies'>
         <SectionTitle>Technologies I use</SectionTitle>
         <TechMarquee />
       </section>
 
-      <Reveal as="section" className="mt-5">
-        <Card className="cta-card">
-          <Card.Body className="d-flex flex-column flex-md-row align-items-md-center justify-content-between gap-3 p-4">
+      <Reveal as='section' className='mt-5'>
+        <Card className='cta-card'>
+          <Card.Body className='d-flex flex-column flex-md-row align-items-md-center justify-content-between gap-3 p-4'>
             <div>
-              <Card.Title as="h2" className="h4">Let&apos;s build something together</Card.Title>
-              <Card.Text className="text-secondary mb-0">
+              <Card.Title as='h2' className='h4'>Let&apos;s build something together</Card.Title>
+              <Card.Text className='text-secondary mb-0'>
                 Looking for a junior developer who learns fast? Let&apos;s talk.
               </Card.Text>
             </div>
-            <Button as={Link} to="/contact" variant="primary" className="flex-shrink-0">
+            <Button as={Link} to='/contact' variant='primary' className='flex-shrink-0'>
               Contact me
             </Button>
           </Card.Body>

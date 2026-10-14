@@ -35,16 +35,16 @@ export default function BootScreen({ onDone }) {
   }, [onDone])
 
   return (
-    <div className="boot-screen" role="status" aria-label="Loading portfolio">
-      <div className="boot-log">
+    <div className='boot-screen' role='status' aria-label='Loading portfolio'>
+      <div className='boot-log'>
         {LINES.slice(0, count).map((line) => (
           <p key={line}>
-            <span className="boot-ok">[ OK ]</span> {line}
+            <span className='boot-ok'>[ OK ]</span> {line}
           </p>
         ))}
-        <span className="tw-cursor" aria-hidden="true">▍</span>
+        <span className='tw-cursor' aria-hidden='true'>▍</span>
       </div>
-      <p className="boot-hint">Press any key or click to skip</p>
+      <p className='boot-hint'>Press any key or click to skip</p>
     </div>
   )
 }

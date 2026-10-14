@@ -6,11 +6,11 @@ export default function FileLink({ item, collapsed = false, onNavigate }) {
     <NavLink
       to={item.path}
       end={item.path === '/'}
-      className="sidebar-link"
+      className='sidebar-link'
       onClick={onNavigate}
       title={collapsed ? item.file : undefined}
     >
-      <Icon className="file-icon" aria-hidden="true" />
+      <Icon className='file-icon' aria-hidden='true' />
       <span className={collapsed ? 'visually-hidden' : ''}>{item.file}</span>
     </NavLink>
   )

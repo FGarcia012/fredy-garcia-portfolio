@@ -7,9 +7,9 @@ export default function NotFound() {
   usePageTitle('Command not found')
   return (
     <>
-      <PageHeader command={`cd ${pathname}`} title="Command not found" />
-      <p className="font-mono text-secondary">bash: cd: {pathname}: No such file or directory</p>
-      <Link to="/" className="btn btn-primary">cd ~</Link>
+      <PageHeader command={`cd ${pathname}`} title='Command not found' />
+      <p className='font-mono text-secondary'>bash: cd: {pathname}: No such file or directory</p>
+      <Link to='/' className='btn btn-primary'>cd ~</Link>
     </>
   )
 }

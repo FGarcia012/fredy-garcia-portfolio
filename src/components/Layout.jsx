@@ -30,19 +30,19 @@ export default function Layout() {
   if (booting) return <BootScreen onDone={finishBoot} />
 
   return (
-    <div className="ide">
+    <div className='ide'>
       <BackgroundFX scanlines={scanlines} />
-      <a className="skip-link" href="#main-content">
+      <a className='skip-link' href='#main-content'>
         Skip to content
       </a>
       <MobileNav />
-      <div className="ide-body">
+      <div className='ide-body'>
         <Sidebar collapsed={collapsed} onToggle={() => setCollapsed((value) => !value)} />
-        <div className="ide-workspace">
+        <div className='ide-workspace'>
           <TabBar pathname={pathname} />
-          <main id="main-content" ref={mainRef} tabIndex={-1} className="ide-main">
-            <div key={pathname} className="ide-content page-enter">
-              <Suspense fallback={<p className="font-mono text-secondary">Loading...</p>}>
+          <main id='main-content' ref={mainRef} tabIndex={-1} className='ide-main'>
+            <div key={pathname} className='ide-content page-enter'>
+              <Suspense fallback={<p className='font-mono text-secondary'>Loading...</p>}>
                 <Outlet />
               </Suspense>
               <SiteFooter />

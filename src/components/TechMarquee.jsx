@@ -2,13 +2,13 @@ import { skills } from '../data/skills'
 
 function Group({ hidden = false }) {
   return (
-    <ul className="marquee-group list-unstyled" aria-hidden={hidden || undefined}>
+    <ul className='marquee-group list-unstyled' aria-hidden={hidden || undefined}>
       {skills.map(({ name, Icon, letters, color }) => (
-        <li key={name} className="marquee-item" style={{ '--skill-color': color }}>
+        <li key={name} className='marquee-item' style={{ '--skill-color': color }}>
           {Icon ? (
-            <Icon className="skill-icon" aria-hidden="true" />
+            <Icon className='skill-icon' aria-hidden='true' />
           ) : (
-            <span className="skill-icon skill-letters" aria-hidden="true">
+            <span className='skill-icon skill-letters' aria-hidden='true'>
               {letters}
             </span>
           )}
@@ -21,8 +21,8 @@ function Group({ hidden = false }) {
 
 export default function TechMarquee() {
   return (
-    <div className="marquee">
-      <div className="marquee-track">
+    <div className='marquee'>
+      <div className='marquee-track'>
         <Group />
         <Group hidden />
       </div>

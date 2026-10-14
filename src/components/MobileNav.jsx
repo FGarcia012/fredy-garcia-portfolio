@@ -11,31 +11,31 @@ export default function MobileNav() {
 
   return (
     <>
-      <Navbar as="header" className="mobile-nav d-lg-none">
-        <div className="d-flex align-items-center justify-content-between w-100 px-3">
-          <Navbar.Brand as={Link} to="/" className="m-0">
-            <span className="brand-prompt">&gt;_</span> fredy-garcia
+      <Navbar as='header' className='mobile-nav d-lg-none'>
+        <div className='d-flex align-items-center justify-content-between w-100 px-3'>
+          <Navbar.Brand as={Link} to='/' className='m-0'>
+            <span className='brand-prompt'>&gt;_</span> fredy-garcia
           </Navbar.Brand>
           <Button
-            variant="outline-secondary"
-            className="mobile-menu-btn"
+            variant='outline-secondary'
+            className='mobile-menu-btn'
             onClick={() => setShow(true)}
-            aria-label="Open menu"
+            aria-label='Open menu'
             aria-expanded={show}
-            aria-controls="mobile-menu"
+            aria-controls='mobile-menu'
           >
             <VscMenu size={20} />
           </Button>
         </div>
       </Navbar>
 
-      <Offcanvas show={show} onHide={close} id="mobile-menu" aria-labelledby="mobile-menu-title">
+      <Offcanvas show={show} onHide={close} id='mobile-menu' aria-labelledby='mobile-menu-title'>
         <Offcanvas.Header closeButton>
-          <Offcanvas.Title id="mobile-menu-title">Explorer</Offcanvas.Title>
+          <Offcanvas.Title id='mobile-menu-title'>Explorer</Offcanvas.Title>
         </Offcanvas.Header>
-        <Offcanvas.Body className="p-0">
-          <nav aria-label="Main navigation">
-            <ul className="list-unstyled m-0">
+        <Offcanvas.Body className='p-0'>
+          <nav aria-label='Main navigation'>
+            <ul className='list-unstyled m-0'>
               {navItems.map((item) => (
                 <li key={item.path}>
                   <FileLink item={item} onNavigate={close} />

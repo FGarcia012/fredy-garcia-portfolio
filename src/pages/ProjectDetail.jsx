@@ -8,9 +8,9 @@ import usePageTitle from '../hooks/usePageTitle'
 function ReadmeSection({ title, show = true, children }) {
   if (!show) return null
   return (
-    <section className="readme-section">
-      <h2 className="readme-heading">
-        <span className="hash" aria-hidden="true">##</span> {title}
+    <section className='readme-section'>
+      <h2 className='readme-heading'>
+        <span className='hash' aria-hidden='true'>##</span> {title}
       </h2>
       {children}
     </section>
@@ -27,11 +27,11 @@ export default function ProjectDetail() {
   if (!project) {
     return (
       <>
-        <PageHeader command={`cat projects/${slug}.md`} title="Project not found" />
-        <p className="text-secondary">
+        <PageHeader command={`cat projects/${slug}.md`} title='Project not found' />
+        <p className='text-secondary'>
           <code>cat: projects/{slug}.md: No such file or directory</code>
         </p>
-        <Button as={Link} to="/projects" variant="outline-primary">&larr; Back to projects</Button>
+        <Button as={Link} to='/projects' variant='outline-primary'>&larr; Back to projects</Button>
       </>
     )
   }
@@ -44,18 +44,18 @@ export default function ProjectDetail() {
       <PageHeader command={`cat projects/${slug}.md`} title={title} />
 
       <Reveal>
-        <Card className="readme">
-          <div className="window-bar">
-            <span className="window-dots" aria-hidden="true">
+        <Card className='readme'>
+          <div className='window-bar'>
+            <span className='window-dots' aria-hidden='true'>
               <i />
               <i />
               <i />
             </span>
-            <span className="window-title">README.md</span>
-            <span className="window-title ms-auto d-none d-sm-inline">{file}</span>
+            <span className='window-title'>README.md</span>
+            <span className='window-title ms-auto d-none d-sm-inline'>{file}</span>
           </div>
-          <Card.Body className="p-3 p-md-4">
-            <ReadmeSection title="Overview" show={Boolean(overview)}>
+          <Card.Body className='p-3 p-md-4'>
+            <ReadmeSection title='Overview' show={Boolean(overview)}>
               <p>{overview}</p>
               {status && (
                 <Badge bg={status === 'Completed' ? 'primary' : 'warning'} text={status === 'Completed' ? undefined : 'dark'}>
@@ -64,43 +64,43 @@ export default function ProjectDetail() {
               )}
             </ReadmeSection>
 
-            <ReadmeSection title="My role" show={Boolean(role)}>
+            <ReadmeSection title='My role' show={Boolean(role)}>
               <p>{role}</p>
             </ReadmeSection>
 
-            <ReadmeSection title="Tech stack" show={hasItems(stack)}>
-              <ul className="list-unstyled d-flex flex-wrap gap-2 m-0">
+            <ReadmeSection title='Tech stack' show={hasItems(stack)}>
+              <ul className='list-unstyled d-flex flex-wrap gap-2 m-0'>
                 {stack.map((tech) => (
                   <li key={tech}>
-                    <Badge bg={null} className="tech-badge">{tech}</Badge>
+                    <Badge bg={null} className='tech-badge'>{tech}</Badge>
                   </li>
                 ))}
               </ul>
             </ReadmeSection>
 
-            <ReadmeSection title="Key features" show={hasItems(features)}>
-              <ul className="readme-list">
+            <ReadmeSection title='Key features' show={hasItems(features)}>
+              <ul className='readme-list'>
                 {features?.map((feature) => (
                   <li key={feature}>{feature}</li>
                 ))}
               </ul>
             </ReadmeSection>
 
-            <ReadmeSection title="Architecture" show={Boolean(architecture)}>
+            <ReadmeSection title='Architecture' show={Boolean(architecture)}>
               {hasItems(architecture?.flow) && (
-                <ol className="scrum-cycle list-unstyled" aria-label="Architecture flow">
+                <ol className='scrum-cycle list-unstyled' aria-label='Architecture flow'>
                   {architecture.flow.map((step, index) => (
                     <li key={step}>
-                      <span className="scrum-step">{step}</span>
+                      <span className='scrum-step'>{step}</span>
                       {index < architecture.flow.length - 1 && (
-                        <span className="scrum-arrow" aria-hidden="true">→</span>
+                        <span className='scrum-arrow' aria-hidden='true'>→</span>
                       )}
                     </li>
                   ))}
                 </ol>
               )}
               {hasItems(architecture?.notes) && (
-                <ul className="readme-list">
+                <ul className='readme-list'>
                   {architecture.notes.map((note) => (
                     <li key={note}>{note}</li>
                   ))}
@@ -108,44 +108,44 @@ export default function ProjectDetail() {
               )}
             </ReadmeSection>
 
-            <ReadmeSection title="Challenges & what I learned" show={hasItems(challenges)}>
-              <ul className="readme-list">
+            <ReadmeSection title='Challenges & what I learned' show={hasItems(challenges)}>
+              <ul className='readme-list'>
                 {challenges?.map((challenge) => (
                   <li key={challenge}>{challenge}</li>
                 ))}
               </ul>
             </ReadmeSection>
 
-            <ReadmeSection title="Screenshots" show={hasItems(screenshots)}>
-              <Carousel className="readme-carousel" interval={null}>
+            <ReadmeSection title='Screenshots' show={hasItems(screenshots)}>
+              <Carousel className='readme-carousel' interval={null}>
                 {screenshots?.map((shot) => (
                   <Carousel.Item key={shot.src}>
-                    <img className="d-block w-100" src={shot.src} alt={shot.alt} loading="lazy" />
+                    <img className='d-block w-100' src={shot.src} alt={shot.alt} loading='lazy' />
                   </Carousel.Item>
                 ))}
               </Carousel>
             </ReadmeSection>
 
-            <ReadmeSection title="Links" show={hasLinks}>
-              <div className="d-flex flex-wrap gap-2">
+            <ReadmeSection title='Links' show={hasLinks}>
+              <div className='d-flex flex-wrap gap-2'>
                 {repositories.map((repository) => (
-                  <Button key={repository.url} href={repository.url} target="_blank" rel="noopener noreferrer" variant="outline-primary">
+                  <Button key={repository.url} href={repository.url} target='_blank' rel='noopener noreferrer' variant='outline-primary'>
                     {repositories.length > 1 ? `GitHub · ${repository.label}` : 'GitHub'}
                   </Button>
                 ))}
                 {demo && (
-                  <Button href={demo} target="_blank" rel="noopener noreferrer" variant="outline-primary">
+                  <Button href={demo} target='_blank' rel='noopener noreferrer' variant='outline-primary'>
                     Live demo
                   </Button>
                 )}
               </div>
-              {linksNote && <p className="text-secondary mt-2 mb-0">{linksNote}</p>}
+              {linksNote && <p className='text-secondary mt-2 mb-0'>{linksNote}</p>}
             </ReadmeSection>
           </Card.Body>
         </Card>
       </Reveal>
 
-      <Button as={Link} to="/projects" variant="outline-secondary" className="mt-4">
+      <Button as={Link} to='/projects' variant='outline-secondary' className='mt-4'>
         &larr; Back to projects
       </Button>
     </>

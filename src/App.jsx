@@ -18,15 +18,15 @@ export default function App() {
     <Routes>
       <Route element={<Layout />}>
         <Route index element={<Home />} />
-        <Route path="about" element={<About />} />
-        <Route path="values" element={<Values />} />
-        <Route path="mark" element={<Mark />} />
-        <Route path="mci" element={<Mci />} />
-        <Route path="projects" element={<Projects />} />
-        <Route path="projects/:slug" element={<ProjectDetail />} />
-        <Route path="cv" element={<Cv />} />
-        <Route path="contact" element={<Contact />} />
-        <Route path="*" element={<NotFound />} />
+        <Route path='about' element={<About />} />
+        <Route path='values' element={<Values />} />
+        <Route path='mark' element={<Mark />} />
+        <Route path='mci' element={<Mci />} />
+        <Route path='projects' element={<Projects />} />
+        <Route path='projects/:slug' element={<ProjectDetail />} />
+        <Route path='cv' element={<Cv />} />
+        <Route path='contact' element={<Contact />} />
+        <Route path='*' element={<NotFound />} />
       </Route>
     </Routes>
   )

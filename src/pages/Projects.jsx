@@ -22,42 +22,42 @@ export default function Projects() {
 
   return (
     <>
-      <PageHeader command="ls ~/projects" title="Projects" />
-      <p className="text-secondary mb-4">
+      <PageHeader command='ls ~/projects' title='Projects' />
+      <p className='text-secondary mb-4'>
         A selection of projects where I applied what I learn. Some are open source: check the code and share
         feedback.
       </p>
 
-      <div className="d-flex flex-wrap gap-2 mb-3" role="group" aria-label="Filter projects">
+      <div className='d-flex flex-wrap gap-2 mb-3' role='group' aria-label='Filter projects'>
         {['All', ...availableTags].map((tag) => (
           <Button
             key={tag}
-            size="sm"
+            size='sm'
             variant={tag === activeTag ? 'primary' : 'outline-secondary'}
             aria-pressed={tag === activeTag}
-            className="filter-chip"
+            className='filter-chip'
             onClick={() => selectTag(tag)}
           >
             {tag}
           </Button>
         ))}
       </div>
-      <p className="visually-hidden" role="status">
+      <p className='visually-hidden' role='status'>
         Showing {visibleProjects.length} {visibleProjects.length === 1 ? 'project' : 'projects'}
       </p>
 
-      <Row className="g-4">
+      <Row className='g-4'>
         {visibleProjects.map((project, index) => (
           <Col key={project.slug} md={6} xl={4}>
-            <Reveal delay={index * 100} className="h-100">
+            <Reveal delay={index * 100} className='h-100'>
               <ProjectCard project={project} />
             </Reveal>
           </Col>
         ))}
       </Row>
 
-      <p className="mt-4 mb-0">
-        <a href={links.github} target="_blank" rel="noopener noreferrer">
+      <p className='mt-4 mb-0'>
+        <a href={links.github} target='_blank' rel='noopener noreferrer'>
           More projects on my GitHub &rarr;
         </a>
       </p>

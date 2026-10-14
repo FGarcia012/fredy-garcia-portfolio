@@ -4,13 +4,13 @@ export default function TabBar({ pathname }) {
   const { file, Icon, crumbs } = getPageMeta(pathname)
 
   return (
-    <div className="tabbar d-none d-lg-block">
-      <div className="editor-tab" aria-hidden="true">
-        <Icon className="file-icon" />
+    <div className='tabbar d-none d-lg-block'>
+      <div className='editor-tab' aria-hidden='true'>
+        <Icon className='file-icon' />
         <span>{file}</span>
       </div>
-      <nav aria-label="Breadcrumb" className="breadcrumb-bar">
-        <ol className="breadcrumb mb-0">
+      <nav aria-label='Breadcrumb' className='breadcrumb-bar'>
+        <ol className='breadcrumb mb-0'>
           {crumbs.map((crumb, index) => {
             const isLast = index === crumbs.length - 1
             return (

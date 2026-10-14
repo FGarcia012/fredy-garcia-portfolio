@@ -13,8 +13,8 @@ export const profile = {
   cvFile: '/cv/Fredy-Garcia-CV.pdf',
 
   about: [
-    "I'm a Computer Science and Systems Engineering student at Universidad de San Carlos de Guatemala (USAC) and a graduate of the Technical Diploma in Computer Science (Perito en Computación). I combine formal training with a self-taught mindset: I keep learning beyond my curriculum, and I specialize in software development.",
-    "I'm a junior full-stack developer with a back-end focus. I work with Java, Python, JavaScript and C++ (which I'm still learning), and I use HTML and CSS on the front end. On the back end I use Node.js, Express and Spring Boot, and I build interfaces with React, Bootstrap and Tailwind CSS, plus JavaFX for desktop applications. I work with MySQL and MongoDB, and I use Git and GitHub to manage my code. I also have professional experience customizing and extending the Odoo ERP for a textile company.",
+    'I\'m a Computer Science and Systems Engineering student at Universidad de San Carlos de Guatemala (USAC) and a graduate of the Technical Diploma in Computer Science (Perito en Computación). I combine formal training with a self-taught mindset: I keep learning beyond my curriculum, and I specialize in software development.',
+    'I\'m a junior full-stack developer with a back-end focus. I work with Java, Python, JavaScript and C++ (which I\'m still learning), and I use HTML and CSS on the front end. On the back end I use Node.js, Express and Spring Boot, and I build interfaces with React, Bootstrap and Tailwind CSS, plus JavaFX for desktop applications. I work with MySQL and MongoDB, and I use Git and GitHub to manage my code. I also have professional experience customizing and extending the Odoo ERP for a textile company.',
     'Outside of code, I like to go out and exercise in my free time. I also enjoy learning about the technologies that exist and exploring different environments, which keeps me growing as a developer.',
   ],
   summary:

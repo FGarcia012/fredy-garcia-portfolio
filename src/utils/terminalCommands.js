@@ -118,7 +118,7 @@ const commands = {
     desc: 'Go to a page (cd about)',
     run: ([target]) => {
       const to = resolvePath(target)
-      if (!to) return { lines: [text(`cd: no such file or directory: ${target}`, 'error'), text("Type 'ls' to see the pages.", 'muted')] }
+      if (!to) return { lines: [text(`cd: no such file or directory: ${target}`, 'error'), text('Type \'ls\' to see the pages.', 'muted')] }
       return { lines: [text(`Opening ${target ?? '~'}...`, 'success')], action: { type: 'navigate', to } }
     },
   },
@@ -175,7 +175,7 @@ function runSudo(args) {
 export const COMMAND_NAMES = Object.keys(commands)
 export const CHIP_COMMANDS = ['help', 'whoami', 'skills', 'projects', 'goals', 'contact', 'ls', 'clear']
 
-export const WELCOME_LINES = [text("Welcome to my terminal. Type 'help' to see the commands.", 'muted')]
+export const WELCOME_LINES = [text('Welcome to my terminal. Type \'help\' to see the commands.', 'muted')]
 
 export function runCommand(raw, context) {
   const [name, ...args] = raw.trim().split(/\s+/)

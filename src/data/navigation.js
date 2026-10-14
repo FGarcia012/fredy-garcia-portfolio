@@ -14,8 +14,8 @@ export const DEFAULT_DESCRIPTION =
 export const navItems = [
   { path: '/', file: 'home.jsx', editorFile: 'home.jsx', title: 'Home', Icon: FaReact, description: DEFAULT_DESCRIPTION },
   { path: '/about', file: 'about.md', editorFile: 'about.md', title: 'About', Icon: VscMarkdown, description: 'About Fredy García: his studies at USAC, the technologies he works with and how he works with Scrum.' },
-  { path: '/values', file: 'values.json', editorFile: 'values.json', title: 'Professional Values', Icon: VscJson, description: "The professional values that guide Fredy García's work: learning, collaboration, leadership, communication, adaptability and integrity." },
-  { path: '/mark', file: 'mark.md', editorFile: 'mark.md', title: 'Personal Mark', Icon: VscMarkdown, description: "Fredy García's personal brand: curiosity, craftsmanship and collaboration." },
+  { path: '/values', file: 'values.json', editorFile: 'values.json', title: 'Professional Values', Icon: VscJson, description: 'The professional values that guide Fredy García\'s work: learning, collaboration, leadership, communication, adaptability and integrity.' },
+  { path: '/mark', file: 'mark.md', editorFile: 'mark.md', title: 'Personal Mark', Icon: VscMarkdown, description: 'Fredy García\'s personal brand: curiosity, craftsmanship and collaboration.' },
   { path: '/mci', file: 'mci.yml', editorFile: 'mci.yml', title: 'MCI Goals', Icon: VscSettingsGear, description: 'The crucially important goals Fredy García is working on to grow as a software developer.' },
   { path: '/projects', file: 'projects/', editorFile: 'projects.md', title: 'Projects', Icon: VscFolder, description: 'A selection of software projects by Fredy García, with tech stack, status and links.' },
   { path: '/cv', file: 'cv.pdf', editorFile: 'cv.pdf', title: 'CV', Icon: VscFilePdf, description: 'Curriculum vitae of Fredy García: experience, education, skills, languages and certifications.' },
